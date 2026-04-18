@@ -1,0 +1,28 @@
+# Oneiric — Hermes Agent Configuration Example
+# Copy to config.yaml and fill in your API keys (never commit config.yaml)
+
+model: kimi-k2.5
+
+api_keys:
+  openai: YOUR_OPENAI_API_KEY
+  fal: YOUR_FAL_API_KEY
+
+fal:
+  style_lora: "dali-surrealist-v1"
+  aspect_ratio: "16:9"
+  frames_per_dream: 6
+
+tts:
+  voice: onyx
+  speed: 0.95
+
+ffmpeg:
+  resolution: "1920x1080"
+  fps: 24
+  codec: libx264
+  transition: crossfade
+  transition_duration: 0.8
+
+gallery:
+  output_dir: gallery/public/dreams
+  data_file: gallery/data/dreams.json
