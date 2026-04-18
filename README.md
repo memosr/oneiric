@@ -7,6 +7,9 @@ Built on **[Hermes Agent](https://nous.systems)** by Nous Research · Powered by
 [![Hackathon](https://img.shields.io/badge/Nous%20Research-Hackathon%202026-blueviolet)](https://nous.systems)
 [![Model](https://img.shields.io/badge/Model-Kimi%20K2.5-blue)](https://kimi.ai)
 [![Status](https://img.shields.io/badge/Status-In%20Development-yellow)]()
+[![Last Commit](https://img.shields.io/github/last-commit/memosr/oneiric)](https://github.com/memosr/oneiric/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/memosr/oneiric)](https://github.com/memosr/oneiric)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
