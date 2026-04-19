@@ -4,7 +4,9 @@
     "date": "2026-04-19",
     "title": "The Divided Tree of Consciousness",
     "path": "public/dreams/dream_001/",
-    "thumbnail": "scene_1.jpeg",
-    "mood": "uncanny"
+    "thumbnail": "pipeline_run/scene_1.jpeg",
+    "mood": "uncanny",
+    "has_manual_run": true,
+    "has_pipeline_run": true
   }
 ]

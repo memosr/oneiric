@@ -132,3 +132,13 @@ A Next.js frontend in `gallery/` reads `gallery/data/dreams.json` and serves the
 **Why it matters:** Multi-step agentic chat is non-deterministic. A failed tool call inside a chain can be swallowed. For a production pipeline where every scene matters, we cannot trust the agent to self-heal.
 
 **The pivot:** Pipeline stages will be invoked programmatically from Python, each stage isolated, each call retried on failure, each artifact validated before the next stage begins. Telegram remains only as input (voice note intake) and output (final film delivery) — not orchestration.
+
+### 2026-04-19 (evening) — Pipeline vindicates the pivot
+
+**What we tried:** Wrote `illustrate.py` with per-scene isolation, retry logic, and immediate download of FAL URLs.
+
+**What happened:** First invocation returned 0/3 images — the Hermes TUI was wrapping long URLs across two lines and the initial regex missed them. After adding a "slow path" that strips/joins whitespace before URL extraction, the retry loop recovered and completed 3/3.
+
+**Why it matters:** The same class of bug that killed scene 2 in manual mode (silent tool failure) was caught, diagnosed, and fixed automatically by the pipeline. Manual chat hides failures; programmatic pipelines expose them.
+
+**The payoff:** Three consistent Dalí-style images generated in ~2 minutes, end-to-end. Dream #001 now has both a manual run (partial) and a pipeline run (complete) archived side-by-side as proof of the pivot's value.

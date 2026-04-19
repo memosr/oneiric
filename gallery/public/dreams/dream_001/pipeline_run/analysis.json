@@ -1,0 +1,34 @@
+{
+  "title": "Divided Tree of Self",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "Beneath a lush fruit tree heavy with abundance, the dreamer stands with their work and young daughter in an idyllic setting. Despite the surface beauty, an inexplicable unease stirs within, a whisper from the unconscious that all is not as harmonious as it appears."
+    },
+    {
+      "order": 2,
+      "description": "A baby snake emerges on the tree's opposite side, small yet charged with ancient symbolic terror. This nascent serpent represents the shadow's first stirring—primitive, transformative energy that the conscious mind finds threatening."
+    },
+    {
+      "order": 3,
+      "description": "The tree becomes a dividing line between two realms: one side bathed in familial joy and professional contentment, the other darkening with fear and danger. The dreamer attempts retreat, yet the snake's presence signals that shadow material demands integration, not avoidance."
+    }
+  ],
+  "symbols": [
+    "fruit tree",
+    "baby snake",
+    "daughter",
+    "division",
+    "work"
+  ],
+  "mood": "foreboding",
+  "color_palette": [
+    "#2D5016",
+    "#D4A574",
+    "#1A0F2E",
+    "#8B4513"
+  ],
+  "jungian_reading_tr": "Rüyanızdaki meyve ağacı, bilinç ile bilinçdışı arasındaki eksen mundi'dir—Kendilik arketipinin somutlaşması. Ağacın ikiye bölünmüş yapısı, psikenizin gölge tarafı ile aydınlık tarafı arasındaki gerilimi simgeler. Yavru yılan, henüz tam olarak bilinçlenmemiş ama dönüşüm potansiyeli taşıyan gölge öğelerinizin habercisidir; küçük ama tehlikeli, bastırılmış içeriklerin uyanışı. Kız çocuğunuz ve işinizle birlikte olduğunuz taraf, ego'nun güvenli alanını temsil ederken, yılanın bulunduğu taraf entegrasyon bekleyen bilinçdışı materyali gösterir. Uzak durma çabanız, gölgeyle yüzleşme korkusunu ifade eder—ancak Jung'a göre, kaçınılmaz olan bu karşılaşma, bütünlüğe giden yolun ta kendisidir.",
+  "id": "dream_001_v2",
+  "date": "2026-04-19"
+}
