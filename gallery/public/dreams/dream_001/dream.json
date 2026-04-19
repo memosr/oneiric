@@ -28,6 +28,19 @@
       "analysis_file": "pipeline_run/analysis.json",
       "success_rate": "3/3",
       "notes": "First end-to-end programmatic run. Retry logic caught an initial TUI URL wrap bug and recovered. Consistency across scenes achieved via DEFAULT_STYLE_PREFIX."
+    },
+    "pipeline_v2": {
+      "method": "programmatic_9x16",
+      "date": "2026-04-19",
+      "scripts": ["pipeline/analyze.py", "pipeline/illustrate.py (9:16 update)"],
+      "scenes": [
+        {"order": 1, "image": "pipeline_run_v2/scene_1.jpeg", "status": "generated"},
+        {"order": 2, "image": "pipeline_run_v2/scene_2.jpeg", "status": "generated"},
+        {"order": 3, "image": "pipeline_run_v2/scene_3.jpeg", "status": "generated"}
+      ],
+      "aspect_ratio": "9:16",
+      "target_resolution": "~768x1344",
+      "notes": "Regenerated in vertical 9:16 for mobile-first video output (TikTok/Reels)."
     }
   },
   "symbols_manual": ["fruit_tree", "baby_serpent", "duality", "paternal_protection", "shadow_self"],

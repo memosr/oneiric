@@ -1,5 +1,5 @@
 # Stage 3: Illustrate — per-scene Dalí-style image generation via Hermes + FAL.
-# Requires: pip3 install requests
+# Requires: pip3 install requests Pillow
 
 from __future__ import annotations
 
@@ -11,7 +11,9 @@ from pathlib import Path
 DEFAULT_STYLE_PREFIX = (
     "Surrealist oil painting in Salvador Dalí style, "
     "meticulous brushwork, dreamlike metaphysical atmosphere, "
-    "hyperrealistic surrealism, museum-quality, cinematic composition, "
+    "hyperrealistic surrealism, museum-quality, "
+    "vertical 9:16 aspect ratio, tall portrait composition, "
+    "full body framing, subject positioned in the upper two-thirds of the frame, "
 )
 
 _URL_RE = re.compile(r'https?://[^\s"]+\.(?:png|jpe?g|webp)', re.IGNORECASE)
@@ -29,12 +31,14 @@ def _build_image_prompt(
     scene_description: str,
     style_prefix: str | None,
     color_palette: list[str] | None,
+    aspect_ratio: str = "9:16",
 ) -> str:
     prefix = style_prefix if style_prefix is not None else DEFAULT_STYLE_PREFIX
     prompt = prefix + scene_description
     if color_palette:
         palette_str = ", ".join(color_palette)
         prompt += f". Color palette: {palette_str}"
+    prompt += f" Format: {aspect_ratio} aspect ratio, vertical orientation."
     return prompt
 
 
@@ -94,11 +98,22 @@ def _download_image(url: str, output_path: Path) -> bool:
         return False
 
 
+def _get_image_dimensions(image_path: Path) -> tuple[int, int] | None:
+    """Return (width, height) using PIL. Returns None if PIL unavailable."""
+    try:
+        from PIL import Image  # noqa: PLC0415
+        with Image.open(image_path) as img:
+            return img.size
+    except Exception:
+        return None
+
+
 def illustrate_scene(
     scene_description: str,
     output_path: Path,
     style_prefix: str | None = None,
     color_palette: list[str] | None = None,
+    aspect_ratio: str = "9:16",
     max_retries: int = 3,
     timeout: int = 180,
 ) -> dict:
@@ -110,7 +125,7 @@ def illustrate_scene(
     import time as _time
 
     t0 = _time.monotonic()
-    full_prompt = _build_image_prompt(scene_description, style_prefix, color_palette)
+    full_prompt = _build_image_prompt(scene_description, style_prefix, color_palette, aspect_ratio)
     hermes_prompt = _HERMES_PROMPT_TEMPLATE.format(full_prompt=full_prompt)
 
     last_error: str | None = None
@@ -127,12 +142,26 @@ def illustrate_scene(
 
             fal_url = url
             if _download_image(url, Path(output_path)):
+                dims = _get_image_dimensions(Path(output_path))
+                is_portrait = dims is not None and dims[1] > dims[0]
+                if dims is not None and not is_portrait:
+                    print(
+                        f"[scene] WARNING: image is landscape {dims[0]}x{dims[1]} "
+                        f"(expected portrait) — attempt {attempt}",
+                        flush=True,
+                    )
+                    if attempt < max_retries:
+                        last_error = f"Image is landscape {dims[0]}x{dims[1]}, retrying for portrait"
+                        time.sleep(2)
+                        continue
                 return {
                     "status": "success",
                     "scene_description": scene_description,
                     "prompt": full_prompt,
                     "fal_url": fal_url,
                     "image_path": str(output_path),
+                    "image_dimensions": list(dims) if dims else None,
+                    "aspect_ratio_actual": f"{dims[0]}:{dims[1]}" if dims else None,
                     "attempts": attempt,
                     "error": None,
                     "duration_sec": round(_time.monotonic() - t0, 1),
@@ -154,6 +183,8 @@ def illustrate_scene(
         "prompt": full_prompt,
         "fal_url": fal_url,
         "image_path": None,
+        "image_dimensions": None,
+        "aspect_ratio_actual": None,
         "attempts": max_retries,
         "error": last_error,
         "duration_sec": round(time.monotonic() - t0, 1),
@@ -186,6 +217,7 @@ def illustrate_dream(
             scene_description=description,
             output_path=image_path,
             color_palette=color_palette,
+            aspect_ratio="9:16",
             max_retries=max_retries,
         )
         status = result["status"]

@@ -142,3 +142,14 @@ A Next.js frontend in `gallery/` reads `gallery/data/dreams.json` and serves the
 **Why it matters:** The same class of bug that killed scene 2 in manual mode (silent tool failure) was caught, diagnosed, and fixed automatically by the pipeline. Manual chat hides failures; programmatic pipelines expose them.
 
 **The payoff:** Three consistent Dalí-style images generated in ~2 minutes, end-to-end. Dream #001 now has both a manual run (partial) and a pipeline run (complete) archived side-by-side as proof of the pivot's value.
+
+### 2026-04-19 (late evening) — Aspect ratio as a first-class citizen
+
+**What we learned:** FAL respects aspect ratio hints embedded in prompts ("vertical 9:16", "tall portrait composition") and produces ~768x1344 portrait images. No explicit API parameter needed for the Hermes Tool Gateway.
+
+**The update:** illustrate.py now defaults to 9:16 with an explicit aspect_ratio parameter. Dream #001 has three archived image sets now:
+  - manual_run (Telegram, 2/3 scenes, 16:9)
+  - pipeline_run (first programmatic, 3/3 scenes, 16:9)
+  - pipeline_run_v2 (9:16 for mobile video, 3/3 scenes)
+
+**Why archiving matters:** Every experiment is preserved. The repo is a timeline of what worked and why.
