@@ -46,6 +46,9 @@ pipeline/output/
 *.jpg
 *.jpeg
 !gallery/public/dreams/.gitkeep
+!gallery/public/dreams/**/*.jpeg
+!gallery/public/dreams/**/*.jpg
+!gallery/public/dreams/**/*.png
 !assets/ambient/.gitkeep
 
 # Logs

@@ -118,3 +118,17 @@ A Next.js frontend in `gallery/` reads `gallery/data/dreams.json` and serves the
 - FAL style LoRA path
 - FFmpeg output settings (resolution, fps, codec)
 - Gallery output directory
+
+---
+
+## Lessons Learned
+
+### 2026-04-19 — Manual Telegram orchestration fails silently
+
+**What we tried:** Asked Hermes via Telegram to generate all 3 scene images in a single multi-step conversation (analyze → plan → illustrate × 3).
+
+**What happened:** Scene 2 was silently dropped. Hermes returned no error — it simply moved to scene 3 after "finishing" scene 1. A later single-scene retry produced a FAL URL that 404'd when opened.
+
+**Why it matters:** Multi-step agentic chat is non-deterministic. A failed tool call inside a chain can be swallowed. For a production pipeline where every scene matters, we cannot trust the agent to self-heal.
+
+**The pivot:** Pipeline stages will be invoked programmatically from Python, each stage isolated, each call retried on failure, each artifact validated before the next stage begins. Telegram remains only as input (voice note intake) and output (final film delivery) — not orchestration.

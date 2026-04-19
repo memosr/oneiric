@@ -1,0 +1,1 @@
+Scene 2 (the baby serpent emerging) failed to generate on 2026-04-19 due to a Hermes tool call failure. This gap documents the lesson that drove our pivot from manual Telegram orchestration to a programmatic pipeline.

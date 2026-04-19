@@ -1,0 +1,39 @@
+{
+  "id": "dream_001",
+  "date": "2026-04-19",
+  "dreamer": "memosr",
+  "title": "The Divided Tree of Consciousness",
+  "transcript_tr": "Rüyamda, işimi ve çocuğumu gördüm, kız çocuğunu, güzel bir ortamdaydık, güzel bir meyve ağacının altında didik. Ancak içimde bir hazırsuzluk vardı ve rüyanın sonuna doğru böyle bir tane yavru yılan gördüm, biraz korkutucuydu. Ama biz ağacın diğer tarafında mutluyduk ama ağacın diğer tarafı ise biraz daha kötü ve korkutucuydu. İşte yılan da, yavru yılan da oradaydı, biz o ortamdan uzak durmaya çalışıyorduk. Bu şekilde bir rüya gördüm.",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A father sits peacefully beneath a lush fruit tree with his young daughter, surrounded by golden afternoon light filtering through abundant leaves. The atmosphere feels idyllic yet carries an inexplicable undercurrent of tension.",
+      "image": "scene_1.jpeg",
+      "status": "generated"
+    },
+    {
+      "order": 2,
+      "description": "The camera reveals the tree's hidden face—a baby serpent emerges from shadowy roots on the opposite side, its scales glinting with menacing iridescence while the father instinctively shields his child.",
+      "image": null,
+      "status": "failed"
+    },
+    {
+      "order": 3,
+      "description": "The family retreats from the duality, caught between the tree's promise of abundance and its lurking danger, the boundary between safety and threat dissolving like melting wax.",
+      "image": "scene_3.jpeg",
+      "status": "generated"
+    }
+  ],
+  "symbols": ["fruit_tree", "baby_serpent", "duality", "paternal_protection", "shadow_self"],
+  "mood": "uncanny",
+  "color_palette": ["#D4AF37", "#2F4F4F", "#8B0000", "#F5DEB3"],
+  "jungian_reading_tr": "Bu rüya, bilinçli mutluluk (meyve ağacı) ile bilinçdışı kaygı (yavru yılan) arasındaki gerilimi gösteriyor. Ağacın iki yüzü, Jung'un 'gölge' kavramını temsil ediyor—bastırılmış korkular ne kadar uzakta görünse de aslında aynı kaynaktan besleniyor. Yavru yılan, henüz tam olarak fark edilmemiş ama varlığını hissettiren bir tehdidi simgeliyor.",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "image_model": "FAL (via Nous Tool Gateway)",
+    "stt": "whisper (via Hermes)",
+    "orchestration": "manual_telegram",
+    "notes": "First real test dream. Manual Telegram orchestration revealed silent tool-call skipping — scene 2 was dropped without error. Motivated pivot to programmatic pipeline."
+  }
+}
