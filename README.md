@@ -78,16 +78,58 @@ Oneiric leans on Hermes Agent's three core superpowers:
 
 ---
 
-## Roadmap
+## Progress
 
-| Days | Milestone |
-|---|---|
-| 1–3 | Project scaffold, Hermes skill stubs, pipeline skeleton |
-| 4–6 | Whisper transcription + GPT dream analysis working end-to-end |
-| 7–10 | FAL image generation with Dalí style prompt engineering |
-| 11–13 | TTS narration + FFmpeg video assembly |
-| 14–15 | Next.js gallery, polish, demo recording |
-| 16 (May 3) | Submission deadline |
+```
+┌──────────┐   ┌─────────┐   ┌──────────┐   ┌─────────┐   ┌──────────┐
+│transcribe│──→│ analyze │──→│illustrate│──→│ narrate │──→│ compose  │
+│  planned │   │  done   │   │  done    │   │  done   │   │ planned  │
+└──────────┘   └─────────┘   └──────────┘   └─────────┘   └──────────┘
+```
+
+### Day 1 — 2026-04-18
+- Hermes Agent (v0.10.0) installed, configured with Kimi K2.5 via Nous Portal
+- Tool Gateway enabled (FAL image, OpenAI TTS, Firecrawl web, Browser Use)
+- Telegram gateway wired to a dedicated bot (`@UyandikBot`)
+- GitHub repo scaffolded with placeholder pipeline files
+
+### Day 2 — 2026-04-19 (morning)
+- First real dream recorded via Telegram voice note (Dream #001)
+- Manual Telegram orchestration tested — revealed silent tool-call skipping
+- Pivoted from chat-based orchestration to a programmatic Python pipeline
+- `pipeline/analyze.py` implemented — Hermes subprocess → Kimi K2.5 →
+  structured JSON analysis with Jungian interpretation in Turkish
+
+### Day 3 — 2026-04-19 (afternoon)
+- `pipeline/illustrate.py` — per-scene FAL image generation with retry logic
+  (3/3 scene consistency achieved on Dream #001)
+- Switched default image generation to 9:16 vertical for mobile-first video
+- `pipeline/narrate.py` — TTS narration of the Jungian interpretation
+  (832 KB Turkish audio, first-attempt success)
+- Three archived runs of Dream #001 preserved side-by-side as evidence of
+  iteration: `manual_run`, `pipeline_run`, `pipeline_run_v2`
+
+### Next (Day 4+)
+- Extend `narrate.py` to also speak the raw transcript (dual-narrator film)
+- `pipeline/compose.py` — FFmpeg-based video assembly: Ken Burns scene motion,
+  scene description subtitles, dual-track audio (transcript + Jungian reading)
+- `pipeline/transcribe.py` — voice note → Turkish text (Whisper via Hermes)
+- `pipeline/main.py` — end-to-end orchestrator
+- Next.js gallery for dream archive
+- Demo video + hackathon submission
+
+---
+
+## Live Example: Dream #001
+
+**Title (pipeline):** *Divided Tree of Self*
+**Mood:** foreboding
+**Symbols:** fruit tree, baby snake, daughter, division, work
+
+See the full archive at [`gallery/public/dreams/dream_001/`](gallery/public/dreams/dream_001/):
+- `manual_run/` — first Telegram-orchestrated attempt (2/3 scenes)
+- `pipeline_run/` — first programmatic attempt (3/3 scenes, 16:9)
+- `pipeline_run_v2/` — vertical 9:16 regeneration for mobile video (3/3 scenes)
 
 ---
 
