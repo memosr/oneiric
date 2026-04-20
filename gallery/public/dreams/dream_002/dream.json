@@ -8,11 +8,26 @@
     "pipeline": {
       "method": "programmatic_9x16",
       "date": "2026-04-20",
-      "scripts": ["pipeline/analyze.py", "pipeline/illustrate.py"],
+      "scripts": [
+        "pipeline/analyze.py",
+        "pipeline/illustrate.py"
+      ],
       "scenes": [
-        {"order": 1, "image": "pipeline_run/scene_1.jpeg", "status": "generated"},
-        {"order": 2, "image": "pipeline_run/scene_2.jpeg", "status": "generated"},
-        {"order": 3, "image": "pipeline_run/scene_3.jpeg", "status": "generated"}
+        {
+          "order": 1,
+          "image": "pipeline_run/scene_1.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 2,
+          "image": "pipeline_run/scene_2.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 3,
+          "image": "pipeline_run/scene_3.jpeg",
+          "status": "generated"
+        }
       ],
       "aspect_ratio": "9:16",
       "resolution": "576x1024",
@@ -30,9 +45,20 @@
       "film_size_mb": 5.33
     }
   },
-  "symbols": ["yeşillik", "dua", "manevi belde", "aile sofrası", "ani uyanış"],
+  "symbols": [
+    "yeşillik",
+    "dua",
+    "manevi belde",
+    "aile sofrası",
+    "ani uyanış"
+  ],
   "mood": "transcendent",
-  "color_palette": ["#2D5016", "#F4E4C1", "#87CEEB", "#D4AF37"],
+  "color_palette": [
+    "#2D5016",
+    "#F4E4C1",
+    "#87CEEB",
+    "#D4AF37"
+  ],
   "jungian_reading_tr": "Bu rüya, bireysel bilinçdışının kolektif bilinçdışıyla buluştuğu bir Kendi (Self) deneyimini yansıtıyor. Manevi beldeler, ego'nun geçici olarak askıya alındığı arketipsel bir alan. Arkadaşlarla yapılan dua, anima entegrasyonu ve içsel birliktelik arayışını simgeliyor. Ev ve aile sofrasına ani dönüş, spiritüel deneyimin günlük bilince entegrasyon çabasını gösterirken; ani uyanış, ego'nun bu derin bütünleşmeye direncini ifade ediyor. Rüya, maddi ve manevi alemler arasındaki eşiğin bilincinde bir yolculuk sunuyor.",
   "generation_metadata": {
     "llm": "moonshotai/kimi-k2.5",
@@ -46,5 +72,10 @@
       "illustrate_scene_3": 59.2
     },
     "contrast_note": "Jungian Self archetype (vs Dream #001's Shadow archetype)"
-  }
+  },
+  "card_path": "card.png",
+  "card_dimensions": [
+    1080,
+    1920
+  ]
 }

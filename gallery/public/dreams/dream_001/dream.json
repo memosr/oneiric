@@ -10,20 +10,47 @@
       "method": "manual_telegram",
       "date": "2026-04-19",
       "scenes": [
-        {"order": 1, "image": "manual_run/scene_1.jpeg", "status": "generated"},
-        {"order": 2, "image": null, "status": "failed"},
-        {"order": 3, "image": "manual_run/scene_3.jpeg", "status": "generated"}
+        {
+          "order": 1,
+          "image": "manual_run/scene_1.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 2,
+          "image": null,
+          "status": "failed"
+        },
+        {
+          "order": 3,
+          "image": "manual_run/scene_3.jpeg",
+          "status": "generated"
+        }
       ],
       "notes": "Telegram conversation with Hermes. Scene 2 silently dropped."
     },
     "pipeline": {
       "method": "programmatic",
       "date": "2026-04-19",
-      "scripts": ["pipeline/analyze.py", "pipeline/illustrate.py"],
+      "scripts": [
+        "pipeline/analyze.py",
+        "pipeline/illustrate.py"
+      ],
       "scenes": [
-        {"order": 1, "image": "pipeline_run/scene_1.jpeg", "status": "generated"},
-        {"order": 2, "image": "pipeline_run/scene_2.jpeg", "status": "generated"},
-        {"order": 3, "image": "pipeline_run/scene_3.jpeg", "status": "generated"}
+        {
+          "order": 1,
+          "image": "pipeline_run/scene_1.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 2,
+          "image": "pipeline_run/scene_2.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 3,
+          "image": "pipeline_run/scene_3.jpeg",
+          "status": "generated"
+        }
       ],
       "analysis_file": "pipeline_run/analysis.json",
       "success_rate": "3/3",
@@ -32,11 +59,26 @@
     "pipeline_v2": {
       "method": "programmatic_9x16",
       "date": "2026-04-19",
-      "scripts": ["pipeline/analyze.py", "pipeline/illustrate.py (9:16 update)"],
+      "scripts": [
+        "pipeline/analyze.py",
+        "pipeline/illustrate.py (9:16 update)"
+      ],
       "scenes": [
-        {"order": 1, "image": "pipeline_run_v2/scene_1.jpeg", "status": "generated"},
-        {"order": 2, "image": "pipeline_run_v2/scene_2.jpeg", "status": "generated"},
-        {"order": 3, "image": "pipeline_run_v2/scene_3.jpeg", "status": "generated"}
+        {
+          "order": 1,
+          "image": "pipeline_run_v2/scene_1.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 2,
+          "image": "pipeline_run_v2/scene_2.jpeg",
+          "status": "generated"
+        },
+        {
+          "order": 3,
+          "image": "pipeline_run_v2/scene_3.jpeg",
+          "status": "generated"
+        }
       ],
       "aspect_ratio": "9:16",
       "target_resolution": "~768x1344",
@@ -50,12 +92,39 @@
       "film_size_mb": 6.19
     }
   },
-  "symbols_manual": ["fruit_tree", "baby_serpent", "duality", "paternal_protection", "shadow_self"],
-  "symbols_pipeline": ["fruit tree", "baby snake", "daughter", "division", "work"],
+  "symbols_manual": [
+    "fruit_tree",
+    "baby_serpent",
+    "duality",
+    "paternal_protection",
+    "shadow_self"
+  ],
+  "symbols_pipeline": [
+    "fruit tree",
+    "baby snake",
+    "daughter",
+    "division",
+    "work"
+  ],
   "mood_manual": "uncanny",
   "mood_pipeline": "foreboding",
-  "color_palette_manual": ["#D4AF37", "#2F4F4F", "#8B0000", "#F5DEB3"],
-  "color_palette_pipeline": ["#2D5016", "#D4A574", "#1A0F2E", "#8B4513"],
+  "color_palette_manual": [
+    "#D4AF37",
+    "#2F4F4F",
+    "#8B0000",
+    "#F5DEB3"
+  ],
+  "color_palette_pipeline": [
+    "#2D5016",
+    "#D4A574",
+    "#1A0F2E",
+    "#8B4513"
+  ],
   "jungian_reading_manual_tr": "Bu rüya, bilinçli mutluluk (meyve ağacı) ile bilinçdışı kaygı (yavru yılan) arasındaki gerilimi gösteriyor. Ağacın iki yüzü, Jung'un 'gölge' kavramını temsil ediyor—bastırılmış korkular ne kadar uzakta görünse de aslında aynı kaynaktan besleniyor. Yavru yılan, henüz tam olarak fark edilmemiş ama varlığını hissettiren bir tehdidi simgeliyor.",
-  "jungian_reading_pipeline_tr": "Rüyanızdaki meyve ağacı, bilinç ile bilinçdışı arasındaki eksen mundi'dir—Kendilik arketipinin somutlaşması. Ağacın ikiye bölünmüş yapısı, psikenizin gölge tarafı ile aydınlık tarafı arasındaki gerilimi simgeler. Yavru yılan, henüz tam olarak bilinçlenmemiş ama dönüşüm potansiyeli taşıyan gölge öğelerinizin habercisidir; küçük ama tehlikeli, bastırılmış içeriklerin uyanışı. Kız çocuğunuz ve işinizle birlikte olduğunuz taraf, ego'nun güvenli alanını temsil ederken, yılanın bulunduğu taraf entegrasyon bekleyen bilinçdışı materyali gösterir. Uzak durma çabanız, gölgeyle yüzleşme korkusunu ifade eder—ancak Jung'a göre, kaçınılmaz olan bu karşılaşma, bütünlüğe giden yolun ta kendisidir."
+  "jungian_reading_pipeline_tr": "Rüyanızdaki meyve ağacı, bilinç ile bilinçdışı arasındaki eksen mundi'dir—Kendilik arketipinin somutlaşması. Ağacın ikiye bölünmüş yapısı, psikenizin gölge tarafı ile aydınlık tarafı arasındaki gerilimi simgeler. Yavru yılan, henüz tam olarak bilinçlenmemiş ama dönüşüm potansiyeli taşıyan gölge öğelerinizin habercisidir; küçük ama tehlikeli, bastırılmış içeriklerin uyanışı. Kız çocuğunuz ve işinizle birlikte olduğunuz taraf, ego'nun güvenli alanını temsil ederken, yılanın bulunduğu taraf entegrasyon bekleyen bilinçdışı materyali gösterir. Uzak durma çabanız, gölgeyle yüzleşme korkusunu ifade eder—ancak Jung'a göre, kaçınılmaz olan bu karşılaşma, bütünlüğe giden yolun ta kendisidir.",
+  "card_path": "card.png",
+  "card_dimensions": [
+    1080,
+    1920
+  ]
 }

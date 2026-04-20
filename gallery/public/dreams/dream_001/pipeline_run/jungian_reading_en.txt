@@ -1,0 +1,21 @@
+The fruit tree in your dream constitutes the axis mundi between            
+     consciousness and the unconscious—the concretization of the Self           
+     archetype. The tree's bifurcated structure symbolizes the tension          
+     between the shadow side and the illuminated side of your psyche. The       
+     infant serpent serves as the herald of shadow elements not yet fully       
+     conscious yet bearing transformative potential; the awakening of           
+     repressed contents, diminutive yet perilous. The side where your           
+     daughter and your work reside represents the safe territory of the         
+     ego, while the side where the serpent dwells indicates unconscious         
+     material awaiting integration. Your effort to maintain distance            
+     expresses the dread of confrontation with the shadow—yet according to      
+     Jung, this inevitable encounter constitutes the very path toward           
+     wholeness.                                                                 
+                                                                                
+
+Resume this session with:
+  hermes --resume 20260420_224158_28ca71
+
+Session:        20260420_224158_28ca71
+Duration:       34s
+Messages:       2 (1 user, 0 tool calls)
