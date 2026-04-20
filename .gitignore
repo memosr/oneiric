@@ -50,7 +50,9 @@ pipeline/output/
 !gallery/public/dreams/**/*.mp3
 !gallery/public/dreams/**/*.jpg
 !gallery/public/dreams/**/*.png
+!gallery/public/dreams/**/*.mp4
 !assets/ambient/.gitkeep
+!assets/fonts/*.ttf
 
 # Logs
 *.log

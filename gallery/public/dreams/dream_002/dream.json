@@ -24,7 +24,10 @@
       "narration_files": {
         "transcript": "pipeline_run/transcript_narration.mp3",
         "jungian": "pipeline_run/jungian_narration.mp3"
-      }
+      },
+      "film_path": "pipeline_run/film.mp4",
+      "film_duration_sec": 70.9,
+      "film_size_mb": 5.33
     }
   },
   "symbols": ["yeşillik", "dua", "manevi belde", "aile sofrası", "ani uyanış"],

@@ -44,7 +44,10 @@
       "narration_files": {
         "transcript": "pipeline_run_v2/transcript_narration.mp3",
         "jungian": "pipeline_run_v2/jungian_narration.mp3"
-      }
+      },
+      "film_path": "pipeline_run_v2/film.mp4",
+      "film_duration_sec": 97.21,
+      "film_size_mb": 6.19
     }
   },
   "symbols_manual": ["fruit_tree", "baby_serpent", "duality", "paternal_protection", "shadow_self"],
