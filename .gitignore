@@ -47,6 +47,7 @@ pipeline/output/
 *.jpeg
 !gallery/public/dreams/.gitkeep
 !gallery/public/dreams/**/*.jpeg
+!gallery/public/dreams/**/*.mp3
 !gallery/public/dreams/**/*.jpg
 !gallery/public/dreams/**/*.png
 !assets/ambient/.gitkeep

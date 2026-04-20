@@ -20,7 +20,11 @@
       "transcript_file": "pipeline_run/transcript.txt",
       "success_rate": "3/3",
       "all_first_attempt": true,
-      "notes": "Second dream processed by the mature pipeline. Pure luminous/spiritual contrast to Dream #001's foreboding shadow. Pipeline produced 3/3 scenes on first attempt — no retries needed. Evidence of pipeline reliability."
+      "notes": "Second dream processed by the mature pipeline. Pure luminous/spiritual contrast to Dream #001's foreboding shadow. Pipeline produced 3/3 scenes on first attempt — no retries needed. Evidence of pipeline reliability.",
+      "narration_files": {
+        "transcript": "pipeline_run/transcript_narration.mp3",
+        "jungian": "pipeline_run/jungian_narration.mp3"
+      }
     }
   },
   "symbols": ["yeşillik", "dua", "manevi belde", "aile sofrası", "ani uyanış"],

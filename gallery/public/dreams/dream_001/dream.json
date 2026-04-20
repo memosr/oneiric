@@ -40,7 +40,11 @@
       ],
       "aspect_ratio": "9:16",
       "target_resolution": "~768x1344",
-      "notes": "Regenerated in vertical 9:16 for mobile-first video output (TikTok/Reels)."
+      "notes": "Regenerated in vertical 9:16 for mobile-first video output (TikTok/Reels).",
+      "narration_files": {
+        "transcript": "pipeline_run_v2/transcript_narration.mp3",
+        "jungian": "pipeline_run_v2/jungian_narration.mp3"
+      }
     }
   },
   "symbols_manual": ["fruit_tree", "baby_serpent", "duality", "paternal_protection", "shadow_self"],

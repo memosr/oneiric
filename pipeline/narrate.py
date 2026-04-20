@@ -190,14 +190,73 @@ def narrate_dream(
     return result
 
 
+def narrate_dream_full(
+    analysis: dict,
+    output_dir: Path,
+    transcript_fallback: str | None = None,
+) -> dict:
+    """
+    Narrate both the raw transcript AND the Jungian interpretation.
+    Produces two mp3 files:
+      - transcript_narration.mp3 (analysis["transcript_tr"] or transcript_fallback)
+      - jungian_narration.mp3    (analysis["jungian_reading_tr"])
+
+    Returns:
+        {
+          "transcript": <result dict from narrate_text, or {"status": "skipped"}>,
+          "jungian":    <result dict from narrate_text>,
+          "success_count": <0, 1, or 2>,
+        }
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    transcript_text = analysis.get("transcript_tr") or transcript_fallback
+    if transcript_text:
+        transcript_result = narrate_text(
+            transcript_text,
+            output_dir / "transcript_narration.mp3",
+        )
+    else:
+        transcript_result = {"status": "skipped", "reason": "no transcript_tr in analysis and no fallback provided"}
+
+    jungian_result = narrate_text(
+        analysis["jungian_reading_tr"],
+        output_dir / "jungian_narration.mp3",
+    )
+
+    success_count = sum(
+        1 for r in (transcript_result, jungian_result)
+        if r.get("status") == "success"
+    )
+
+    return {
+        "transcript": transcript_result,
+        "jungian": jungian_result,
+        "success_count": success_count,
+    }
+
+
 if __name__ == "__main__":
     import argparse
 
     ap = argparse.ArgumentParser(description="Narrate a dream's Jungian interpretation.")
     ap.add_argument("--analysis", required=True, help="Path to analysis JSON from analyze.py")
-    ap.add_argument("--output-dir", required=True, help="Directory to write narration.mp3 to")
+    ap.add_argument("--output-dir", required=True, help="Directory to write narration file(s) to")
+    ap.add_argument("--full", action="store_true",
+                    help="Narrate both transcript and Jungian reading")
+    ap.add_argument("--transcript-from-file", metavar="PATH",
+                    help="Fallback transcript text file (used when analysis lacks transcript_tr)")
     args = ap.parse_args()
 
     analysis = json.loads(Path(args.analysis).read_text(encoding="utf-8"))
-    result = narrate_dream(analysis, Path(args.output_dir))
+
+    if args.full:
+        fallback = None
+        if args.transcript_from_file:
+            fallback = Path(args.transcript_from_file).read_text(encoding="utf-8").strip()
+        result = narrate_dream_full(analysis, Path(args.output_dir), transcript_fallback=fallback)
+    else:
+        result = narrate_dream(analysis, Path(args.output_dir))
+
     print(json.dumps(result, indent=2, ensure_ascii=False))
