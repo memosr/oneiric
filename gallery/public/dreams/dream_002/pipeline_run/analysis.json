@@ -1,0 +1,34 @@
+{
+  "title": "Sacred Thresholds of the Soul",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "The dreamer enters luminous spiritual realms bathed in golden light, where verdant meadows stretch infinitely. This is the domain of the Self, where the ego temporarily dissolves into collective unconscious beauty."
+    },
+    {
+      "order": 2,
+      "description": "Among friends in the emerald sanctuary, hands joined in prayer, the dreamer experiences anima integration and communal blessing. The greenery pulses with the Great Mother's fertility, suggesting psychic renewal."
+    },
+    {
+      "order": 3,
+      "description": "An abrupt shift to the familial hearth, where the sacred transforms into domestic warmth. The shared meal represents the integration of spiritual transcendence into everyday consciousness before the ego violently reasserts itself through waking."
+    }
+  ],
+  "symbols": [
+    "yeşillik",
+    "dua",
+    "manevi belde",
+    "aile sofrası",
+    "ani uyanış"
+  ],
+  "mood": "transcendent",
+  "color_palette": [
+    "#2D5016",
+    "#F4E4C1",
+    "#87CEEB",
+    "#D4AF37"
+  ],
+  "jungian_reading_tr": "Bu rüya, bireysel bilinçdışının kolektif bilinçdışıyla buluştuğu bir Kendi (Self) deneyimini yansıtıyor. Manevi beldeler, ego'nun geçici olarak askıya alındığı arketipsel bir alan. Arkadaşlarla yapılan dua, anima entegrasyonu ve içsel birliktelik arayışını simgeliyor. Ev ve aile sofrasına ani dönüş, spiritüel deneyimin günlük bilince entegrasyon çabasını gösterirken; ani uyanış, ego'nun bu derin bütünleşmeye direncini ifade ediyor. Rüya, maddi ve manevi alemler arasındaki eşiğin bilincinde bir yolculuk sunuyor.",
+  "id": "dream_002",
+  "date": "2026-04-20"
+}

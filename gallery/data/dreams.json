@@ -6,7 +6,19 @@
     "path": "public/dreams/dream_001/",
     "thumbnail": "pipeline_run_v2/scene_1.jpeg",
     "mood": "uncanny",
+    "archetype": "shadow",
     "has_manual_run": true,
+    "has_pipeline_run": true
+  },
+  {
+    "id": "dream_002",
+    "date": "2026-04-20",
+    "title": "Sacred Thresholds of the Soul",
+    "path": "public/dreams/dream_002/",
+    "thumbnail": "pipeline_run/scene_1.jpeg",
+    "mood": "transcendent",
+    "archetype": "self",
+    "has_manual_run": false,
     "has_pipeline_run": true
   }
 ]

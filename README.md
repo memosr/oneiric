@@ -120,16 +120,19 @@ Oneiric leans on Hermes Agent's three core superpowers:
 
 ---
 
-## Live Example: Dream #001
+## Live Examples
 
-**Title (pipeline):** *Divided Tree of Self*
-**Mood:** foreboding
-**Symbols:** fruit tree, baby snake, daughter, division, work
+### Dream #001 — *The Divided Tree of Consciousness*
+- **Mood:** foreboding · **Archetype:** shadow
+- **Symbols:** fruit tree, baby snake, duality, paternal protection
+- Three archived runs: [`manual_run`](gallery/public/dreams/dream_001/manual_run/) (2/3, Telegram), [`pipeline_run`](gallery/public/dreams/dream_001/pipeline_run/) (3/3, 16:9), [`pipeline_run_v2`](gallery/public/dreams/dream_001/pipeline_run_v2/) (3/3, 9:16)
 
-See the full archive at [`gallery/public/dreams/dream_001/`](gallery/public/dreams/dream_001/):
-- `manual_run/` — first Telegram-orchestrated attempt (2/3 scenes)
-- `pipeline_run/` — first programmatic attempt (3/3 scenes, 16:9)
-- `pipeline_run_v2/` — vertical 9:16 regeneration for mobile video (3/3 scenes)
+### Dream #002 — *Sacred Thresholds of the Soul*
+- **Mood:** transcendent · **Archetype:** self
+- **Symbols:** yeşillik, dua, manevi belde, aile sofrası
+- [`pipeline_run`](gallery/public/dreams/dream_002/pipeline_run/) — 3/3 scenes, all first-attempt success, pure programmatic pipeline
+
+**Why two dreams?** Dream #001 (shadow: a baby serpent lurking) and Dream #002 (self: luminous spiritual realms) sit on opposite poles of the Jungian psyche. The same pipeline — without any prompt adjustment — captured both faithfully. That is the core claim of Oneiric: your dream's emotional register determines the film's atmosphere.
 
 ---
 
