@@ -6,6 +6,7 @@ Produces a 1080×1920 PNG suitable for Instagram / social media.
 
 from __future__ import annotations
 
+import colorsys
 import json
 import re
 import subprocess
@@ -20,9 +21,10 @@ CARD_W, CARD_H = 1080, 1920
 PAD_X = 60
 FONT_PATH = Path("assets/fonts/PlayfairDisplay.ttf")
 
-STRIP_IMG_W = 320
-STRIP_IMG_H = 568
-STRIP_GAP = 10
+# Strip spans full card width, no gaps
+STRIP_IMG_W = 360
+STRIP_IMG_H = 640
+STRIP_GAP = 0
 
 # ── Color helpers ─────────────────────────────────────────────────────────────
 
@@ -36,6 +38,14 @@ def _luminance(rgb: tuple[int, int, int]) -> float:
     return 0.299 * r + 0.587 * g + 0.114 * b
 
 
+def _darken_hsl(rgb: tuple[int, int, int], factor: float = 0.6) -> tuple[int, int, int]:
+    """Darken a color by reducing HSL lightness — preserves saturation."""
+    r, g, b = rgb
+    h, l, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    r2, g2, b2 = colorsys.hls_to_rgb(h, max(0.0, l * factor), s)
+    return int(r2 * 255), int(g2 * 255), int(b2 * 255)
+
+
 def _sort_palette(palette: list[str]) -> list[tuple[int, int, int]]:
     """Return list of RGB tuples sorted darkest-first by luminance."""
     rgbs = [_hex_to_rgb(h) for h in palette]
@@ -46,30 +56,26 @@ def _sort_palette(palette: list[str]) -> list[tuple[int, int, int]]:
 def _pick_colors(palette: list[str]):
     """Return (bg_top, bg_bot, text_color, accent_color, sep_color)."""
     sorted_rgbs = _sort_palette(palette)
-    # Background: darkest colors that are actually dark (lum < 128)
     dark = [c for c in sorted_rgbs if _luminance(c) < 128]
+
     if len(dark) >= 2:
         bg_top, bg_bot = dark[0], dark[1]
     elif len(dark) == 1:
-        # Make a slightly lighter variant for the bottom
+        # Darken via HSL so gradient looks real, not flat
         bg_top = dark[0]
-        bg_bot = tuple(min(255, c + 25) for c in dark[0])
+        bg_bot = _darken_hsl(dark[0], factor=0.6)
     else:
-        # All light palette — darken the darkest
-        bg_top = tuple(max(0, c - 100) for c in sorted_rgbs[0])
-        bg_bot = tuple(max(0, c - 70) for c in sorted_rgbs[0])
+        # All light — darken the darkest color
+        bg_top = _darken_hsl(sorted_rgbs[0], factor=0.5)
+        bg_bot = _darken_hsl(sorted_rgbs[0], factor=0.35)
 
-    # Text: lightest palette color, but ensure readable (lum > 150)
     lightest = sorted_rgbs[-1]
     if _luminance(lightest) > 150:
         text_color = lightest
     else:
         text_color = (238, 228, 205)  # warm cream fallback
 
-    # Accent: mid-range color (not darkest, not lightest)
     accent_color = sorted_rgbs[max(0, len(sorted_rgbs) // 2)]
-
-    # Separator: slightly brightened accent
     sep_color = tuple(min(255, c + 50) for c in accent_color)
 
     return bg_top, bg_bot, text_color, accent_color, sep_color
@@ -109,10 +115,16 @@ def _extract_plain_response(raw: str) -> str:
     marker = raw.find("⚕ Hermes")
     start = (marker + len("⚕ Hermes")) if marker != -1 else 0
     text = raw[start:].strip()
-    # Drop TUI box-drawing lines (│ ╰ ╭ etc.)
     lines = [l for l in text.splitlines()
              if not re.match(r"^\s*[│╰╭╮╯┤├┼─═]+\s*$", l)]
-    return "\n".join(lines).strip()
+    result = "\n".join(lines).strip()
+    # Strip Hermes session footer and everything after it
+    for footer_marker in ("Resume this session with:", "\nSession:", "\nDuration:"):
+        idx = result.find(footer_marker)
+        if idx != -1:
+            result = result[:idx].strip()
+            break
+    return result
 
 
 def translate_to_english(text_tr: str) -> str:
@@ -128,16 +140,64 @@ def translate_to_english(text_tr: str) -> str:
     return _extract_plain_response(raw)
 
 
+def _is_turkish(text: str) -> bool:
+    """Return True if text contains Turkish-specific characters."""
+    return bool(re.search(r'[üşıöğçÜŞİÖĞÇ]', text))
+
+
+def _translate_symbol(symbol: str) -> str:
+    """Translate a single Turkish dream symbol to English via Hermes."""
+    escaped = json.dumps(symbol)[1:-1]
+    prompt = (
+        "Translate this single Turkish dream symbol or short phrase to English. "
+        "Use concise, evocative language. "
+        "Respond with ONLY the English translation, no quotes, no explanation: "
+        f"'{escaped}'"
+    )
+    raw = _call_hermes_plain(prompt, timeout=60)
+    return _extract_plain_response(raw)
+
+
+def translate_symbols(symbols: list[str], cache_path: Path,
+                      force_retranslate: bool = False) -> list[str]:
+    """Translate Turkish symbols to English, caching results in symbols_en.json."""
+    cache: dict[str, str] = {}
+    if cache_path.exists() and not force_retranslate:
+        with open(cache_path) as f:
+            cache = json.load(f)
+
+    result = []
+    changed = False
+    for sym in symbols:
+        if _is_turkish(sym):
+            if sym not in cache:
+                cache[sym] = _translate_symbol(sym)
+                changed = True
+            result.append(cache[sym])
+        else:
+            result.append(sym)
+
+    if changed:
+        with open(cache_path, "w") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+
+    return result
+
+
 # ── Text helpers ──────────────────────────────────────────────────────────────
 
-def _first_n_sentences(text: str, n: int, max_chars: int) -> str:
-    """Take first n sentences, truncate at max_chars, append ellipsis."""
-    parts = re.split(r"(?<=[.!?])\s+", text.strip())
-    result = " ".join(parts[:n])
-    if len(result) > max_chars:
-        result = result[:max_chars].rsplit(" ", 1)[0]
-    result = result.rstrip(".!?") + "..."
-    return result
+def _smart_truncate(text: str, max_chars: int) -> str:
+    """Truncate at sentence boundary ≤ max_chars. Append '...' only if cut."""
+    text = " ".join(text.split())  # normalize whitespace and newlines
+    if len(text) <= max_chars:
+        return text
+    chunk = text[:max_chars]
+    # Prefer cutting at last sentence-ending punctuation
+    m = list(re.finditer(r'[.!?]', chunk))
+    if m:
+        return text[:m[-1].end()].strip()
+    # No sentence end — cut at last word boundary
+    return chunk.rsplit(" ", 1)[0].rstrip() + "..."
 
 
 def _wrap_lines(draw: ImageDraw.ImageDraw, text: str,
@@ -185,8 +245,8 @@ def _draw_separator(draw: ImageDraw.ImageDraw, y: int,
 def _draw_chips(draw: ImageDraw.ImageDraw, symbols: list[str],
                 font: ImageFont.FreeTypeFont, start_y: int,
                 chip_bg: tuple, chip_text: tuple,
-                pad_x: int = 64, h_pad: int = 18,
-                v_pad: int = 10, gap: int = 10) -> int:
+                pad_x: int = 60, h_pad: int = 20,
+                v_pad: int = 12, gap: int = 12) -> int:
     """Draw rounded symbol chips. Returns Y after the last row."""
     x, y = pad_x, start_y
     row_h = font.size + v_pad * 2
@@ -242,8 +302,9 @@ def generate_card(
           scene_1.jpeg, scene_2.jpeg, scene_3.jpeg
           analysis.json
 
-    Cache: translated Jungian English saved to
-      dream_dir/<run>/jungian_reading_en.txt
+    Caches:
+      <run_dir>/jungian_reading_en.txt  — Jungian translation
+      <run_dir>/symbols_en.json         — symbol chip translations
 
     Returns dict with status, output_path, file_size_kb, color_palette_used,
     translation_cached, render_time_sec, error.
@@ -284,13 +345,13 @@ def generate_card(
         title_font      = ImageFont.truetype(fp, 56)
         subtitle_font   = ImageFont.truetype(fp, 26)
         label_font      = ImageFont.truetype(fp, 17)
-        transcript_font = ImageFont.truetype(fp, 30)
-        jung_font       = ImageFont.truetype(fp, 27)
-        chip_font       = ImageFont.truetype(fp, 20)
-        footer_font     = ImageFont.truetype(fp, 18)
+        transcript_font = ImageFont.truetype(fp, 32)
+        jung_font       = ImageFont.truetype(fp, 30)
+        chip_font       = ImageFont.truetype(fp, 26)
+        footer_font1    = ImageFont.truetype(fp, 23)
+        footer_font2    = ImageFont.truetype(fp, 17)
 
-        # ── Translation (cached) ──────────────────────────────────────────────
-        # Cache lives next to analysis.json
+        # ── Jungian translation (cached) ──────────────────────────────────────
         en_cache = analysis_path.parent / "jungian_reading_en.txt"
         if en_cache.exists() and not force_retranslate:
             jung_en = en_cache.read_text().strip()
@@ -301,6 +362,11 @@ def generate_card(
             en_cache.write_text(jung_en)
             out["translation_cached"] = False
 
+        # ── Symbol translation (cached) ───────────────────────────────────────
+        symbols_raw = analysis.get("symbols") or dream.get("symbols", [])
+        symbols_cache = analysis_path.parent / "symbols_en.json"
+        symbols = translate_symbols(symbols_raw, symbols_cache, force_retranslate)
+
         # ── Text content ──────────────────────────────────────────────────────
         title = dream.get("title") or analysis.get("title", "Untitled Dream")
         mood  = (analysis.get("mood") or dream.get("mood", "")).upper()
@@ -309,11 +375,8 @@ def generate_card(
 
         scenes = analysis.get("scenes", [])
         first_desc = scenes[0]["description"] if scenes else ""
-        transcript_snippet = _first_n_sentences(first_desc, 2, 200) if first_desc else ""
-
-        jung_snippet = _first_n_sentences(jung_en, 3, 250) if jung_en else ""
-
-        symbols = analysis.get("symbols") or dream.get("symbols", [])
+        transcript_snippet = _smart_truncate(first_desc, 280) if first_desc else ""
+        jung_snippet = _smart_truncate(jung_en, 280) if jung_en else ""
 
         # ── Scene images ──────────────────────────────────────────────────────
         scene_paths = sorted(scene_dir.glob("scene_*.jpeg"))[:3]
@@ -327,7 +390,7 @@ def generate_card(
         draw = ImageDraw.Draw(canvas)
         _draw_gradient(draw, CARD_W, CARD_H, bg_top, bg_bot)
 
-        # Dim overlay: top 160px (vignette effect)
+        # Top vignette
         for i in range(160):
             t = (160 - i) / 160
             d = int(t * 55)
@@ -336,87 +399,89 @@ def generate_card(
                 fill=tuple(max(0, c - d) for c in bg_top),
             )
 
-        # ── Layout ────────────────────────────────────────────────────────────
+        # ── Chip colors: proper luminance-based contrast ───────────────────────
         content_w = CARD_W - PAD_X * 2
         label_color = tuple(min(255, c + 90) for c in accent_color)
-        # Chip: use accent as bg, text_color as label — check contrast
-        chip_text_color = bg_top if _luminance(accent_color) > 100 else text_color
+        chip_bg = accent_color
+        # Dark chip → light text; light chip → dark text
+        chip_text_color = (20, 20, 20) if _luminance(chip_bg) > 128 else (238, 228, 205)
 
-        y = 75
+        # ── Layout ────────────────────────────────────────────────────────────
+        y = 60
 
         # Title
         y = _draw_text_block(draw, title, title_font,
                              PAD_X, y, content_w, text_color,
-                             line_spacing=10) + 14
+                             line_spacing=10) + 16
 
-        # Subtitle
+        # Subtitle (mood / archetype)
         y = _draw_text_block(draw, subtitle_text, subtitle_font,
                              PAD_X, y, content_w, label_color,
-                             line_spacing=6) + 22
-
-        # Separator
-        _draw_separator(draw, y, sep_color)
-        y += 22
-
-        # Image strip
-        n = len(scene_imgs)
-        strip_total_w = n * STRIP_IMG_W + (n - 1) * STRIP_GAP
-        strip_x = (CARD_W - strip_total_w) // 2
-        for i, img in enumerate(scene_imgs):
-            canvas.paste(img, (strip_x + i * (STRIP_IMG_W + STRIP_GAP), y))
-        y += STRIP_IMG_H + 30
+                             line_spacing=6) + 26
 
         # Separator
         _draw_separator(draw, y, sep_color)
         y += 26
 
-        # Transcript section
+        # Image strip — full card width, no gaps
+        for i, img in enumerate(scene_imgs):
+            canvas.paste(img, (i * STRIP_IMG_W, y))
+        y += STRIP_IMG_H + 40
+
+        # Separator
+        _draw_separator(draw, y, sep_color)
+        y += 52  # padding before Dream Journal
+
+        # Dream Journal
         _draw_text_block(draw, "DREAM JOURNAL", label_font,
                          PAD_X, y, content_w, label_color)
-        y += label_font.size + 10
+        y += label_font.size + 12
 
         if transcript_snippet:
             y = _draw_text_block(draw, transcript_snippet, transcript_font,
                                  PAD_X, y, content_w, text_color,
-                                 line_spacing=9) + 26
+                                 line_spacing=10) + 30
         else:
-            y += 26
+            y += 30
 
         # Separator
         _draw_separator(draw, y, sep_color)
-        y += 26
+        y += 48  # padding before Jungian Reading
 
-        # Jungian section
+        # Jungian Reading
         _draw_text_block(draw, "JUNGIAN READING", label_font,
                          PAD_X, y, content_w, label_color)
-        y += label_font.size + 10
+        y += label_font.size + 12
 
         if jung_snippet:
             y = _draw_text_block(draw, jung_snippet, jung_font,
                                  PAD_X, y, content_w, text_color,
-                                 line_spacing=8) + 26
+                                 line_spacing=10) + 30
         else:
-            y += 26
+            y += 30
 
         # Separator
         _draw_separator(draw, y, sep_color)
-        y += 26
+        y += 45  # padding before chips
 
         # Symbol chips
         if symbols:
             _draw_chips(draw, symbols, chip_font, y,
-                        chip_bg=accent_color,
+                        chip_bg=chip_bg,
                         chip_text=chip_text_color)
 
-        # Footer — fixed to bottom
-        footer_text = "ONEIRIC  ·  2026"
-        fw = int(draw.textlength(footer_text, font=footer_font))
-        draw.text(
-            ((CARD_W - fw) // 2, CARD_H - 55),
-            footer_text,
-            font=footer_font,
-            fill=sep_color,
-        )
+        # ── Footer — fixed to bottom ──────────────────────────────────────────
+        footer_y = CARD_H - 100
+        footer_text1 = "ONEIRIC"
+        fw1 = int(draw.textlength(footer_text1, font=footer_font1))
+        draw.text(((CARD_W - fw1) // 2, footer_y), footer_text1,
+                  font=footer_font1, fill=sep_color)
+
+        footer_text2 = "dream \u2192 film  \u00b7  built on Hermes Agent"
+        fw2 = int(draw.textlength(footer_text2, font=footer_font2))
+        footer_color2 = tuple(max(0, c - 40) for c in sep_color)
+        draw.text(((CARD_W - fw2) // 2, footer_y + 32), footer_text2,
+                  font=footer_font2, fill=footer_color2)
 
         # ── Save ──────────────────────────────────────────────────────────────
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -443,7 +508,7 @@ if __name__ == "__main__":
     ap.add_argument("--dream-dir", required=True)
     ap.add_argument("--output", required=True)
     ap.add_argument("--force-retranslate", action="store_true",
-                    help="Ignore cached English translation")
+                    help="Ignore cached translations (Jungian + symbols)")
     args = ap.parse_args()
 
     result = generate_card(

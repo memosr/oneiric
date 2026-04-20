@@ -1,18 +1,10 @@
-This dream reflects an experience of the Self in which the individual      
-     unconscious converges with the collective unconscious. The numinous        
-     regions constitute an archetypal domain wherein the ego is temporarily     
-     suspended. Prayer undertaken with companions symbolizes anima              
-     integration and the quest for intrapsychic unity. The abrupt return to     
-     the domestic sphere and familial table demonstrates the endeavor to        
-     integrate the spiritual experience into quotidian consciousness, while     
-     the sudden awakening signifies the ego's resistance to such profound       
-     integration. The dream thus presents a journey undertaken at the           
-     threshold between material and spiritual realms.                           
-                                                                                
-
-Resume this session with:
-  hermes --resume 20260420_224246_4d9b84
-
-Session:        20260420_224246_4d9b84
-Duration:       43s
-Messages:       2 (1 user, 0 tool calls)
+This dream reflects a Self experience wherein the personal unconscious     
+     converges with the collective unconscious. The numinous landscapes         
+     constitute an archetypal domain wherein the ego is temporarily             
+     suspended. Prayer enacted with companions symbolizes anima integration     
+     and the pursuit of inner concord. The abrupt return to the domestic        
+     sphere and familial table illustrates the endeavor to integrate the        
+     spiritual experience into quotidian consciousness, while the sudden        
+     awakening signifies the ego's resistance to such profound integration.     
+     The dream presents a journey undertaken with conscious awareness of        
+     the liminal threshold between material and spiritual realms.
