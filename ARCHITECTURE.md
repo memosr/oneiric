@@ -153,3 +153,23 @@ A Next.js frontend in `gallery/` reads `gallery/data/dreams.json` and serves the
   - pipeline_run_v2 (9:16 for mobile video, 3/3 scenes)
 
 **Why archiving matters:** Every experiment is preserved. The repo is a timeline of what worked and why.
+
+### 2026-04-20 — The pivot from film to card
+
+**What we tried:** `pipeline/compose.py` assembles full 9:16 short films (~85s) using FFmpeg with Ken Burns scene motion, drawtext subtitles, and mixed dual narration. Two films were successfully rendered for Dream #001 and Dream #002.
+
+**What happened:** The films worked end-to-end, but the quality bar for a judge-ready demo required substantial polish (Ken Burns timing, subtitle placement, font rendering in zoompan frames, render cost per iteration). Each FFmpeg iteration cycle was 30-90 seconds; card rendering via PIL is 5-15 seconds. Polish velocity matters for a 16-day hackathon.
+
+**The pivot:** A single-image "dream card" was introduced as the primary output. The card consolidates the same narrative payload — three scenes in triptych, transcript excerpt, Jungian reading, symbol chips, metadata — into a 1080x1920 PNG that renders in seconds. Social-media native, iteration-friendly, demo-ready.
+
+**Films remain available.** `pipeline/compose.py` is preserved and Dream #001 / Dream #002 films live in the archive. They are a bonus capability, not the primary product.
+
+**Design principle:** Pipelines that are cheap to iterate get better faster than pipelines that are expensive to iterate. When polish velocity becomes the bottleneck, change the output shape.
+
+### 2026-04-20 (late) — Dynamic scene count as a feature
+
+**What we observed:** `analyze.py`'s prompt allows Kimi to produce 2-5 scenes depending on dream richness. Dreams #001 and #002 produced 3 scenes; the (fictional, richer) Dream #003 produced 4.
+
+**The trade-off:** `card.py` currently hardcodes a 3-scene horizontal strip. Scene 4 for Dream #003 was archived as a bonus but not shown. This preserves the card layout but loses the emotional climax of some dreams.
+
+**Next:** Multi-layout card rendering (Priority 1 in NEXT.md).

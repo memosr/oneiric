@@ -1,6 +1,6 @@
 # Oneiric
 
-> **Turn your voice-recorded dreams into surreal Dalí-style short films.**
+> **Turn your voice-recorded dreams into surreal Dalí-style dream cards.**
 
 Built on **[Hermes Agent](https://nous.systems)** by Nous Research · Powered by **Kimi K2.5**
 
@@ -37,14 +37,14 @@ Voice Recording
       ▼
 3. ILLUSTRATE   — Dream Illustrator skill generates Dalí-style frames via FAL API
       │
-      ▼
-4. NARRATE      — Dream Composer skill writes and voices cinematic narration via OpenAI TTS
+      ├──→ 4. CARD     — Pillow assembles scenes + transcript + Jungian chips into
+      │                   a 1080x1920 dream card PNG  [PRIMARY OUTPUT]
+      │
+      └──→ 4b. NARRATE → 5. COMPOSE  — dual-mp3 narration + FFmpeg film assembly
+                                        [BONUS OUTPUT — optional]
       │
       ▼
-5. COMPOSE      — FFmpeg assembles frames + narration into a short film (.mp4)
-      │
-      ▼
-  Gallery (Next.js) — Browse and share your dream films
+  Gallery (HTML + Tailwind) — Scrollable card grid, Vercel deploy
 ```
 
 Each stage is a discrete Hermes skill, allowing the agent to delegate, retry, and persist intermediate state across sessions.
@@ -60,8 +60,11 @@ Each stage is a discrete Hermes skill, allowing the agent to delegate, retry, an
 | Speech-to-text | OpenAI Whisper |
 | Image generation | FAL API (Flux / SDXL with Dalí style LoRA) |
 | Text-to-speech | OpenAI TTS (onyx voice) |
-| Video assembly | FFmpeg |
-| Gallery frontend | Next.js + Tailwind CSS |
+| Card rendering | Pillow (PIL) — gradient generation, typography, image compositing |
+| Typography | Playfair Display — serif titles and body text |
+| Translation | Kimi K2.5 — Turkish → English for symbol chips and Jungian readings |
+| Video assembly | FFmpeg — film assembly (bonus/optional output) |
+| Gallery frontend | Plain HTML + Tailwind CDN (Vercel static deploy) |
 | Storage | Local filesystem / S3-compatible |
 
 ---
@@ -82,9 +85,12 @@ Oneiric leans on Hermes Agent's three core superpowers:
 
 ```
 ┌──────────┐   ┌─────────┐   ┌──────────┐   ┌─────────┐   ┌──────────┐
-│transcribe│──→│ analyze │──→│illustrate│──→│ narrate │──→│ compose  │
-│  planned │   │  done   │   │  done    │   │  done   │   │ planned  │
+│transcribe│──→│ analyze │──→│illustrate│──→│  card   │──→│ gallery  │
+│ planned  │   │  done   │   │  done    │   │  done   │   │ planned  │
 └──────────┘   └─────────┘   └──────────┘   └─────────┘   └──────────┘
+                                    │
+                                    ├──→ narrate ──→ compose (film, bonus)
+                                    │      done        done
 ```
 
 ### Day 1 — 2026-04-18
@@ -110,18 +116,20 @@ Oneiric leans on Hermes Agent's three core superpowers:
   iteration: `manual_run`, `pipeline_run`, `pipeline_run_v2`
 
 ### Day 4 — 2026-04-20
-- `pipeline/card.py` — 1080×1920 social card generator (gradient, image strip, Jungian reading, symbol chips)
-- Dream #003 archived: *Keys Without Locks* — fictional stress test, Trickster archetype, 4/4 scenes generated
-- Completes the shadow + self + trickster Jungian archetype trio
-- `card.py` patch: `analysis_for_card.json` auto-detected, enabling per-dream card/archive split
+- Extended `narrate.py` with dual-narrator mode (transcript + Jungian reading), producing two mp3s per dream
+- `pipeline/compose.py` — FFmpeg-based 9:16 video assembly with Ken Burns, drawtext subtitles, dual audio mixing. Two test films rendered (Dream #001 and Dream #002), ~70-100s each.
+- **Pivot:** Film output had polish hurdles (Ken Burns timing, subtitle layout, render cost per iteration). Decided the primary deliverable should be a **dream card** — a single high-resolution PNG combining scenes, transcript, Jungian interpretation, and metadata chips. Film mode remains as a bonus capability.
+- `pipeline/card.py` — 1080x1920 dream card generator with dynamic palette gradient (per-dream), English transcript excerpt, translated Jungian summary, symbol chips, Playfair Display typography.
+- **Polish pass:** 6 fixes landed in a single commit (English symbol chips, full-height layout, smart truncation at sentence boundaries, synthetic gradient for palettes lacking dark variants, contrast-aware chip text coloring, two-line footer).
+- **Dream #003 — *Keys Without Locks* (fictional).** Stress test: absurd cross-species metamorphoses (fish-as-books, chess-knight librarian, key rain). Kimi autonomously produced 4 scenes for this richer dream (pipeline supports 2-5 dynamically). Card shows first 3; scene 4 archived as bonus with provenance notes.
+- Three-dream gallery complete, spanning three Jungian archetypes: **Shadow · Self · Trickster**.
 
 ### Next (Day 5+)
-- `pipeline/compose.py` — FFmpeg-based video assembly: Ken Burns scene motion,
-  scene description subtitles, dual-track audio (transcript + Jungian reading)
-- `pipeline/transcribe.py` — voice note → Turkish text (Whisper via Hermes)
-- `pipeline/main.py` — end-to-end orchestrator
-- Next.js gallery for dream archive
-- Demo video + hackathon submission
+- Extend `card.py` layout to support 4-5 scenes (2x2 grid or vertical stack)
+- Collect 2-3 more real dreams — target archetypes: **Anima**, **Puer**, **Great Mother**, **Hero**
+- Simple HTML gallery (Vercel static deploy) — scrollable card grid + individual dream detail pages with audio playback
+- Demo video (2 min): Telegram voice note → pipeline runtime → card reveal. End frame shows all cards as a grid.
+- Submission: X post tagging @NousResearch, Discord creative-hackathon-submissions channel link
 
 ---
 
@@ -143,7 +151,7 @@ Oneiric leans on Hermes Agent's three core superpowers:
 - [`pipeline_run`](gallery/public/dreams/dream_003/pipeline_run/) — 4/4 scenes generated (card shows 3, scene 4 archived as bonus)
 - Stress test: absurd cross-species metamorphoses (fish-books, chess-knight-librarian). Pipeline autonomously produced 4 scenes for this richer dream.
 
-**Why three dreams?** Dream #001 (shadow), #002 (self), and #003 (trickster) complete a Jungian archetype trio. The same pipeline — without any prompt adjustment — captured all three faithfully across radically different registers: foreboding, transcendent, and absurdist liminal. That is the core claim of Oneiric: your dream's emotional signature determines the film's atmosphere.
+**Why three dreams?** Each card represents a distinct Jungian archetype — Dream #001 (Shadow: a baby serpent lurking), Dream #002 (Self: luminous spiritual realms), Dream #003 (Trickster: fish-as-books, chess-knight librarian). The same pipeline — no prompt tuning — produced all three with atmosphere faithful to each dream's emotional register. That is the core claim of Oneiric: your dream's feeling determines the card's face.
 
 ---
 
