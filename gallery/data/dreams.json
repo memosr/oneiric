@@ -20,5 +20,19 @@
     "archetype": "self",
     "has_manual_run": false,
     "has_pipeline_run": true
+  },
+  {
+    "id": "dream_003",
+    "date": "2026-04-20",
+    "title": "Keys Without Locks",
+    "path": "public/dreams/dream_003/",
+    "thumbnail": "pipeline_run/scene_1.jpeg",
+    "mood": "liminal",
+    "archetype": "trickster",
+    "is_fictional": true,
+    "has_manual_run": false,
+    "has_pipeline_run": true,
+    "scene_count": 4,
+    "scenes_in_card": 3
   }
 ]

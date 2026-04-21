@@ -109,8 +109,13 @@ Oneiric leans on Hermes Agent's three core superpowers:
 - Three archived runs of Dream #001 preserved side-by-side as evidence of
   iteration: `manual_run`, `pipeline_run`, `pipeline_run_v2`
 
-### Next (Day 4+)
-- Extend `narrate.py` to also speak the raw transcript (dual-narrator film)
+### Day 4 — 2026-04-20
+- `pipeline/card.py` — 1080×1920 social card generator (gradient, image strip, Jungian reading, symbol chips)
+- Dream #003 archived: *Keys Without Locks* — fictional stress test, Trickster archetype, 4/4 scenes generated
+- Completes the shadow + self + trickster Jungian archetype trio
+- `card.py` patch: `analysis_for_card.json` auto-detected, enabling per-dream card/archive split
+
+### Next (Day 5+)
 - `pipeline/compose.py` — FFmpeg-based video assembly: Ken Burns scene motion,
   scene description subtitles, dual-track audio (transcript + Jungian reading)
 - `pipeline/transcribe.py` — voice note → Turkish text (Whisper via Hermes)
@@ -132,7 +137,13 @@ Oneiric leans on Hermes Agent's three core superpowers:
 - **Symbols:** yeşillik, dua, manevi belde, aile sofrası
 - [`pipeline_run`](gallery/public/dreams/dream_002/pipeline_run/) — 3/3 scenes, all first-attempt success, pure programmatic pipeline
 
-**Why two dreams?** Dream #001 (shadow: a baby serpent lurking) and Dream #002 (self: luminous spiritual realms) sit on opposite poles of the Jungian psyche. The same pipeline — without any prompt adjustment — captured both faithfully. That is the core claim of Oneiric: your dream's emotional register determines the film's atmosphere.
+### Dream #003 — *Keys Without Locks* (fictional)
+- **Mood:** liminal · **Archetype:** trickster
+- **Symbols:** fish, library, chess knight, keys, locks
+- [`pipeline_run`](gallery/public/dreams/dream_003/pipeline_run/) — 4/4 scenes generated (card shows 3, scene 4 archived as bonus)
+- Stress test: absurd cross-species metamorphoses (fish-books, chess-knight-librarian). Pipeline autonomously produced 4 scenes for this richer dream.
+
+**Why three dreams?** Dream #001 (shadow), #002 (self), and #003 (trickster) complete a Jungian archetype trio. The same pipeline — without any prompt adjustment — captured all three faithfully across radically different registers: foreboding, transcendent, and absurdist liminal. That is the core claim of Oneiric: your dream's emotional signature determines the film's atmosphere.
 
 ---
 

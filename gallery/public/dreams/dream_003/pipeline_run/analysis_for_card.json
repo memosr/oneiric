@@ -1,0 +1,36 @@
+{
+  "title": "Keys Without Locks",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A vast library stretches endlessly, but every book on the shelves is a living fish, their scales shimmering with unreadable text. The fish writhe and turn their own pages, devouring their own stories in an endless cycle of self-consumption."
+    },
+    {
+      "order": 2,
+      "description": "The librarian emerges—a chess knight come to life, its wooden hooves clicking against marble floors. Instead of strategy, it recites melancholic poetry, its voice echoing through the aquatic silence of the reading room."
+    },
+    {
+      "order": 3,
+      "description": "The ceiling dissolves like wet paper, revealing not sky but a void from which countless iron keys cascade downward like metallic rain. Each key lands with a chime that resonates in the dreamer's chest."
+    }
+  ],
+  "symbols": [
+    "fish",
+    "library",
+    "chess knight",
+    "keys",
+    "locks",
+    "rain",
+    "books"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#1e3a5f",
+    "#c9a227",
+    "#4a5568",
+    "#87ceeb"
+  ],
+  "jungian_reading_tr": "Bu rüya bilinçdışının kendini okuma çabasını simgeler—balıklar arketipal içeriği temsil ederken, kendini okumaları bilinçdışının bilince yükseliş sürecidir. Satranç atı şeklindeki kütüphaneci, animus figürüdür; stratejik zihnin şiirsel, yaratıcı yönünü temsil eder. Kilitsiz anahtarlar, henüz somutlaşmamış potansiyellerin ve bilinçdışında hazır bekleyen çözümlerin işaretidir. Rüya, henüz keşfedilmemiş kapılara sahip olduğunuzu ama bu kapıların zamanı geldiğinde açılacağını fısıldar.",
+  "id": "dream_003",
+  "date": "2026-04-20"
+}

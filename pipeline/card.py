@@ -277,9 +277,13 @@ def _find_scene_dir(dream_dir: Path) -> Path:
 
 
 def _find_analysis_path(dream_dir: Path) -> Path:
-    """Return the analysis.json path, preferring pipeline_run_v2 then pipeline_run."""
+    """Return the analysis path, preferring analysis_for_card.json over analysis.json."""
     for candidate in ("pipeline_run_v2", "pipeline_run"):
-        p = dream_dir / candidate / "analysis.json"
+        d = dream_dir / candidate
+        card_p = d / "analysis_for_card.json"
+        if card_p.exists():
+            return card_p
+        p = d / "analysis.json"
         if p.exists():
             return p
     raise FileNotFoundError(f"analysis.json not found in any run dir under {dream_dir}")

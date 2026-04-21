@@ -1,0 +1,41 @@
+{
+  "id": "dream_003",
+  "date": "2026-04-20",
+  "dreamer": "memosr (fictional dream for diversity testing)",
+  "title": "Keys Without Locks",
+  "is_fictional": true,
+  "transcript_tr": "Rüyamda bir kütüphanedeydim, ama kitapların hepsi balıktı. Balıklar kendini okuyordu. Kütüphaneci bir satranç taşıydı, at gibiydi ama bana şiir okuyordu. Bir anda tavan açıldı, yağmur yerine anahtarlar düştü. Her anahtarı topladım ama hiçbirinin kilidi yoktu.",
+  "runs": {
+    "pipeline": {
+      "method": "programmatic_9x16",
+      "date": "2026-04-20",
+      "scripts": ["pipeline/analyze.py", "pipeline/illustrate.py"],
+      "scenes": [
+        {"order": 1, "image": "pipeline_run/scene_1.jpeg", "status": "generated", "used_in_card": true},
+        {"order": 2, "image": "pipeline_run/scene_2.jpeg", "status": "generated", "used_in_card": true},
+        {"order": 3, "image": "pipeline_run/scene_3.jpeg", "status": "generated", "used_in_card": true},
+        {"order": 4, "image": "pipeline_run/scene_4_bonus.jpeg", "status": "generated", "used_in_card": false, "note": "Kimi produced 4 scenes for this rich dream. Scene 4 is archived as bonus. Card uses only first 3 due to current card.py layout."}
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "576x1024",
+      "full_analysis": "pipeline_run/analysis.json",
+      "card_analysis": "pipeline_run/analysis_for_card.json",
+      "success_rate": "4/4",
+      "all_first_attempt": "TBD (check illustrate.py output)",
+      "notes": "Stress test for pipeline: surreal/absurd dream with cross-species metamorphosis (fish-books, chess-librarian, rain-keys). Kimi autonomously chose 4 scenes given the dream's richness. All 4 images succeeded on FAL. Scene 4 is the emotional climax ('keys grow heavier with each step, pregnant with purpose yet denied consummation') but omitted from card due to 3-scene layout constraint."
+    }
+  },
+  "symbols": ["fish", "library", "chess knight", "keys", "locks", "rain", "books"],
+  "mood": "liminal",
+  "archetype": "trickster",
+  "color_palette": ["#1e3a5f", "#c9a227", "#4a5568", "#87ceeb"],
+  "jungian_reading_tr": "Bu rüya bilinçdışının kendini okuma çabasını simgeler—balıklar arketipal içeriği temsil ederken, kendili okumaları bilinçdışının bilince yükseliş sürecidir. Satranç atı şeklindeki kütüphaneci, animus figürüdür; stratejik zihnin şiirsel, yaratıcı yönünü temsil eder. Kilitsiz anahtarlar, henüz somutlaşmamış potansiyellerin ve bilinçdışında hazır bekleyen çözümlerin işaretidir. Rüya, henüz keşfedilmemiş kapılara sahip olduğunuzu ama bu kapıların zamanı geldiğinde açılacağını fısıldar.",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "image_model": "FAL (via Nous Tool Gateway)",
+    "orchestration": "programmatic (pipeline/analyze.py + pipeline/illustrate.py)",
+    "archetype_trio_complete": true,
+    "note": "Completes the Dream #001 (shadow) + #002 (self) + #003 (trickster) archetype trio."
+  }
+}
