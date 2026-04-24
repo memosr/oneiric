@@ -133,6 +133,15 @@ Oneiric leans on Hermes Agent's three core superpowers:
 
 ---
 
+## Live Gallery
+
+See the full archive at **[oneiric-memosr.vercel.app](#)**
+(deploying — update this link after Vercel)
+
+Or browse the static source at `gallery/`.
+
+---
+
 ## Live Examples
 
 ### Dream #001 — *The Divided Tree of Consciousness*

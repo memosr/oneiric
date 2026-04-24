@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oneiric — Turn your dreams into Salvador Dalí-style cards. Built on Nous Research Hermes Agent + Kimi K2.5.">
+  <title>Oneiric — Dreams as Cards</title>
+
+  <!-- Open Graph / Twitter Card for social sharing -->
+  <meta property="og:title" content="Oneiric — Dreams as Cards">
+  <meta property="og:description" content="Where your dreams become portable artworks. Built on Hermes Agent + Kimi K2.5.">
+  <meta property="og:image" content="/public/dreams/dream_003/card.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            'oneiric-bg': '#0a0a0f',
+            'oneiric-surface': '#12121a',
+            'oneiric-accent': '#c9a227',
+            'oneiric-text': '#f5e6d3',
+            'oneiric-muted': '#8a8594',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(180deg, #0a0a0f 0%, #12121a 100%);
+      min-height: 100vh;
+      color: #f5e6d3;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    .serif { font-family: 'Playfair Display', serif; }
+
+    /* Card hover effect */
+    .dream-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .dream-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(201, 162, 39, 0.15);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      padding: 2rem;
+    }
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 95vh;
+      object-fit: contain;
+      box-shadow: 0 0 60px rgba(201, 162, 39, 0.2);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #f5e6d3;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(245, 230, 211, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .lightbox-close:hover {
+      background: rgba(201, 162, 39, 0.2);
+    }
+
+    /* Grid responsive */
+    .dream-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .dream-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .dream-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1440px) {
+      .dream-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HERO / HEADER -->
+  <header class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+    <h1 class="serif text-6xl md:text-7xl font-bold text-oneiric-accent mb-3 tracking-tight">
+      Oneiric
+    </h1>
+    <p class="serif text-xl md:text-2xl text-oneiric-text italic mb-8 max-w-2xl">
+      Where your dreams become portable artworks.
+    </p>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <div class="bg-oneiric-surface/50 border border-oneiric-muted/20 rounded-lg p-6 md:p-8">
+      <h2 class="serif text-2xl text-oneiric-accent mb-4">About</h2>
+      <p class="text-oneiric-text/90 leading-relaxed mb-4">
+        Oneiric turns text-described dreams into Salvador Dalí-style cards.
+        Every card contains three AI-generated scenes, a Jungian reading, and
+        a symbolic analysis — all produced by a pipeline running entirely on
+        <a href="https://nousresearch.com/" target="_blank" rel="noopener"
+           class="text-oneiric-accent underline">Nous Research's Hermes Agent</a>
+        with Kimi K2.5, FAL image generation, and OpenAI TTS.
+      </p>
+      <p class="text-oneiric-text/90 leading-relaxed mb-6">
+        Built for the Nous Research Creative Hackathon 2026.
+      </p>
+      <a href="https://t.me/OneiricDreamBot" target="_blank" rel="noopener"
+         class="inline-block bg-oneiric-accent text-oneiric-bg px-6 py-3 rounded-full serif font-semibold hover:bg-oneiric-accent/90 transition">
+        Try it → @OneiricDreamBot
+      </a>
+    </div>
+  </section>
+
+  <!-- DREAMS ARCHIVE -->
+  <main class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="flex items-baseline justify-between mb-8">
+      <h2 class="serif text-3xl text-oneiric-accent">Dreams Archive</h2>
+      <span id="dream-count" class="text-oneiric-muted text-sm"></span>
+    </div>
+
+    <div id="dream-grid" class="dream-grid">
+      <!-- Cards injected by script.js -->
+    </div>
+
+    <p id="empty-state" class="text-oneiric-muted text-center py-12 hidden">
+      No dreams yet. Be the first to send one.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="max-w-6xl mx-auto px-6 py-10 border-t border-oneiric-muted/20 mt-10">
+    <div class="flex flex-col md:flex-row md:justify-between gap-4 text-sm text-oneiric-muted">
+      <div>
+        <span class="serif text-oneiric-accent">ONEIRIC</span>
+        · dream → card · built on Hermes Agent
+      </div>
+      <div class="flex gap-6">
+        <a href="https://github.com/memosr/oneiric" target="_blank" rel="noopener"
+           class="hover:text-oneiric-accent transition">GitHub</a>
+        <a href="https://t.me/OneiricDreamBot" target="_blank" rel="noopener"
+           class="hover:text-oneiric-accent transition">Telegram Bot</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" src="" alt="Dream card">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
