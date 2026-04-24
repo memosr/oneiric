@@ -4,9 +4,11 @@
     "date": "2026-04-19",
     "title": "The Divided Tree of Consciousness",
     "path": "public/dreams/dream_001/",
-    "thumbnail": "pipeline_run_v2/scene_1.jpeg",
+    "thumbnail": "card.png",
     "mood": "uncanny",
     "archetype": "shadow",
+    "dreamer": "@memosr",
+    "is_fictional": false,
     "has_manual_run": true,
     "has_pipeline_run": true
   },
@@ -15,9 +17,11 @@
     "date": "2026-04-20",
     "title": "Sacred Thresholds of the Soul",
     "path": "public/dreams/dream_002/",
-    "thumbnail": "pipeline_run/scene_1.jpeg",
+    "thumbnail": "card.png",
     "mood": "transcendent",
     "archetype": "self",
+    "dreamer": "@memosr",
+    "is_fictional": false,
     "has_manual_run": false,
     "has_pipeline_run": true
   },
@@ -26,9 +30,10 @@
     "date": "2026-04-20",
     "title": "Keys Without Locks",
     "path": "public/dreams/dream_003/",
-    "thumbnail": "pipeline_run/scene_1.jpeg",
+    "thumbnail": "card.png",
     "mood": "liminal",
     "archetype": "trickster",
+    "dreamer": "@memosr",
     "is_fictional": true,
     "has_manual_run": false,
     "has_pipeline_run": true,
@@ -42,7 +47,9 @@
     "path": "public/dreams/dream_004/",
     "thumbnail": "card.png",
     "mood": "ethereal",
-    "dreamer": "@memo_cc"
+    "archetype": "anima",
+    "dreamer": "@memo_cc",
+    "is_fictional": false
   },
   {
     "id": "dream_005",
@@ -51,7 +58,9 @@
     "path": "public/dreams/dream_005/",
     "thumbnail": "card.png",
     "mood": "wistful",
-    "dreamer": "@memo_cc"
+    "archetype": "anima",
+    "dreamer": "@memo_cc",
+    "is_fictional": false
   },
   {
     "id": "dream_006",
@@ -60,7 +69,9 @@
     "path": "public/dreams/dream_006/",
     "thumbnail": "card.png",
     "mood": "transcendent",
-    "dreamer": "@memo_cc"
+    "archetype": "self",
+    "dreamer": "@memo_cc",
+    "is_fictional": false
   },
   {
     "id": "dream_007",
@@ -69,7 +80,9 @@
     "path": "public/dreams/dream_007/",
     "thumbnail": "card.png",
     "mood": "whimsical",
-    "dreamer": "@memo_cc"
+    "archetype": "puer",
+    "dreamer": "@memo_cc",
+    "is_fictional": false
   },
   {
     "id": "dream_008",
@@ -78,6 +91,8 @@
     "path": "public/dreams/dream_008/",
     "thumbnail": "card.png",
     "mood": "luminous",
-    "dreamer": "@memo_cc"
+    "archetype": "self",
+    "dreamer": "@memo_cc",
+    "is_fictional": false
   }
 ]
