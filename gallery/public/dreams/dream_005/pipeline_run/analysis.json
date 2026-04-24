@@ -1,0 +1,38 @@
+{
+  "title": "The Unknocked Door",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A solitary figure walks through hushed streets at dawn, cool air drifting through empty avenues as the first golden light filters between silent buildings. Only distant birds accompany the dreamer's slow footsteps."
+    },
+    {
+      "order": 2,
+      "description": "Passing an open bakery, warm steam rises from freshly baked bread left unattended on the counter. The aroma fills the air, yet no baker is present—only the offering itself, glowing in the dim interior."
+    },
+    {
+      "order": 3,
+      "description": "Turning a corner, the dreamer discovers a street from childhood, hauntingly familiar yet cloaked in the fog of imperfect memory. Recognition tugs at the edges of consciousness."
+    },
+    {
+      "order": 4,
+      "description": "Before a modest house, the dreamer stands transfixed by a closed door. As the hand lifts to knock, the vision dissolves—an invitation unanswered, a threshold uncrossed."
+    }
+  ],
+  "symbols": [
+    "door",
+    "bread",
+    "childhood street",
+    "dawn",
+    "empty bakery"
+  ],
+  "mood": "wistful",
+  "color_palette": [
+    "#F4E4C1",
+    "#8B9DC3",
+    "#D4A373",
+    "#E8DCC4"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinçdışının evine doğru bir yolculuğu simgeler. Fırındaki ekmek, ruhsal beslenme ve kendi kendini gerçekleştirmenin somut bir metaforudur—kimse yoktur çünkü bu armağan zaten hazırdır. Çocukluk sokağı, kolektif bilinçdışının derinliklerindeki Anima veya Animus ile buluşma alanıdır. Kapı, bilinç ile bilinçdışı arasındaki eşiği temsil eder; vurmak üzereyken uyanmak, henüz hazır olmayan bir içsel gerçeğe dair bir direnci gösterir. Şafak vakti, yeni bir bilinçlenme doğumunun habercisidir.",
+  "id": "dream_005",
+  "date": "2026-04-24"
+}

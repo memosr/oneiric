@@ -1,0 +1,28 @@
+{
+  "id": "dream_008",
+  "date": "2026-04-24",
+  "dreamer": "@memo_cc",
+  "title": "Golden Whispers of the Deep",
+  "transcript_tr": "Sessiz bir ormanda yürüyorsun… ağaçların yaprakları hafif rüzgarla fısıldıyor. Güneş ışığı dalların arasından süzülüp yere altın gibi düşüyor.\n\nBirden küçük bir dere görüyorsun. Suyun içinde balıklar değil… yavaşça parlayan küçük ışıklar yüzüyor.\n\nEğilip suya dokunduğun anda, bütün orman bir anlığına daha parlak oluyor… sonra her şey yavaşça sakinliğe geri dönüyor.",
+  "mood": "luminous",
+  "symbols": [
+    "forest",
+    "stream",
+    "glowing orbs",
+    "golden light",
+    "water"
+  ],
+  "color_palette": [
+    "#2D4A3E",
+    "#D4AF37",
+    "#87CEEB",
+    "#F5F5DC"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

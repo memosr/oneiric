@@ -1,0 +1,29 @@
+{
+  "id": "dream_006",
+  "date": "2026-04-23",
+  "dreamer": "@memo_cc",
+  "title": "The Luminous Threshold",
+  "transcript_tr": "Gökyüzü mora çalan bir akşam renginde… ama yıldızlar sabit değil, yavaşça akıyorlar. Sanki gökyüzü bir nehir gibi.\n\nSen, ince ve uzun taş köprülerden oluşan bir yerde yürüyorsun. Köprüler boşlukta asılı, aşağı baktığında bulutların altında devasa, sessiz yaratıkların gölgeleri hareket ediyor. Ama korkutucu değiller, sadece ağır ve huzurlu.\n\nYürüdükçe köprünün taşları ayaklarının altında hafifçe parlıyor. Her adımda farklı bir renk yayılıyor. Uzakta, havada süzülen bir ada var. Adanın üzerinde tek bir ağaç… dalları yukarı değil, aşağı doğru uzuyor ve ucunda ışık damlaları birikiyor.\n\nAdanın kenarına vardığında o damlalardan biri kopup aşağı düşüyor… ama yere çarpmıyor. Havada asılı kalıp küçük bir kapıya dönüşüyor.\n\nKapı yavaşça açılıyor.\n\nİçeriden rüzgar değil… başka bir zamanın sesi geliyor.",
+  "mood": "transcendent",
+  "symbols": [
+    "flowing stars",
+    "stone bridges",
+    "shadow creatures",
+    "inverted tree",
+    "light droplets",
+    "floating door"
+  ],
+  "color_palette": [
+    "#2E1A47",
+    "#4A5568",
+    "#F6E05E",
+    "#1A365D"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 4
+  }
+}

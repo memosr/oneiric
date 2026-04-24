@@ -1,0 +1,28 @@
+{
+  "id": "dream_007",
+  "date": "2026-04-23",
+  "dreamer": "@memo_cc",
+  "title": "The Digital Menagerie",
+  "transcript_tr": "rüyamda pokemon toplayıcısı olarak gördüm. \n\nhatta bir kere pokemon ile savaşıyordum.\n\nen son arkadaşlarıma pokemonlarımın gösteriyordum.",
+  "mood": "whimsical",
+  "symbols": [
+    "pokemon",
+    "collection",
+    "battle",
+    "spherical capsule",
+    "friends"
+  ],
+  "color_palette": [
+    "#FFCB05",
+    "#3B4CCA",
+    "#7B68EE",
+    "#2F4F4F"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

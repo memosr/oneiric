@@ -1,0 +1,35 @@
+{
+  "title": "The Luminous Threshold",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A vast evening sky painted in deep purple hues, where stars flow like a celestial river rather than remaining fixed. The heavens themselves appear fluid, suggesting time and cosmos in gentle motion."
+    },
+    {
+      "order": 2,
+      "description": "You traverse delicate stone bridges suspended in infinite void, each step illuminating the path with shifting colors. Below the clouds, massive shadows of ancient creatures move with serene weight, representing the peaceful presence of the unconscious."
+    },
+    {
+      "order": 3,
+      "description": "A floating island emerges, crowned by a solitary tree whose branches grow downward toward the earth. At each branch tip, droplets of pure light gather like crystalline fruit, defying gravity and natural law."
+    }
+  ],
+  "symbols": [
+    "flowing stars",
+    "stone bridges",
+    "shadow creatures",
+    "inverted tree",
+    "light droplets",
+    "floating door"
+  ],
+  "mood": "transcendent",
+  "color_palette": [
+    "#2E1A47",
+    "#4A5568",
+    "#F6E05E",
+    "#1A365D"
+  ],
+  "jungian_reading_tr": "Bu rüya, bireyselleşme sürecinin derin bir yansımasıdır. Ayaklar altında parıldayan taşlar, farkındalığın her adımla yeniden doğduğunu; aşağı bakan ağaç ise içe dönük arayışın ve bilinçdışına yönelen köklerin sembolüdür. Işık damlalarından oluşan kapı, kolektif bilinçdışına açılan bir eşiktir — rüzgâr değil, 'başka bir zamanın sesi' gelmesi, kişinin zamansızlık deneyimine ve arketipsel gerçekliğe eriştiğini gösterir. Bulutların altındaki sessiz yaratıklar, korkuyla değil huzurla karşılaşılan Gölge'nin entegrasyonunu temsil eder.",
+  "id": "dream_006",
+  "date": "2026-04-24"
+}

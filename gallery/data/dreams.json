@@ -34,5 +34,50 @@
     "has_pipeline_run": true,
     "scene_count": 4,
     "scenes_in_card": 3
+  },
+  {
+    "id": "dream_004",
+    "date": "2026-04-23",
+    "title": "The Cosmic Mirror",
+    "path": "public/dreams/dream_004/",
+    "thumbnail": "card.png",
+    "mood": "ethereal",
+    "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_005",
+    "date": "2026-04-23",
+    "title": "The Unknocked Door",
+    "path": "public/dreams/dream_005/",
+    "thumbnail": "card.png",
+    "mood": "wistful",
+    "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_006",
+    "date": "2026-04-23",
+    "title": "The Luminous Threshold",
+    "path": "public/dreams/dream_006/",
+    "thumbnail": "card.png",
+    "mood": "transcendent",
+    "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_007",
+    "date": "2026-04-23",
+    "title": "The Digital Menagerie",
+    "path": "public/dreams/dream_007/",
+    "thumbnail": "card.png",
+    "mood": "whimsical",
+    "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_008",
+    "date": "2026-04-24",
+    "title": "Golden Whispers of the Deep",
+    "path": "public/dreams/dream_008/",
+    "thumbnail": "card.png",
+    "mood": "luminous",
+    "dreamer": "@memo_cc"
   }
 ]

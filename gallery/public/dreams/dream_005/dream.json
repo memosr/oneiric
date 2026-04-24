@@ -1,0 +1,28 @@
+{
+  "id": "dream_005",
+  "date": "2026-04-23",
+  "dreamer": "@memo_cc",
+  "title": "The Unknocked Door",
+  "transcript_tr": "Sabahın çok erken bir saati… hafif serin bir hava var. Küçük, sakin bir mahallede yürüyorsun. Sokaklar neredeyse boş, sadece uzaktan bir kuş sesi geliyor. Güneş yeni doğuyor, binaların arasından yumuşak bir ışık süzülüyor.\n\nYavaşça ilerlerken bir fırının önünden geçiyorsun. Kapı aralık, içeriden taze ekmek kokusu geliyor. İçeri bakıyorsun; kimse yok ama tezgâhta yeni çıkmış ekmekler duruyor, hafif buharı hâlâ üstünde.\n\nTekrar yürümeye devam ediyorsun. Bir köşeyi dönünce çocukluğundan tanıdık gibi gelen bir sokak çıkıyor karşına. Her şey tanıdık ama tam olarak hatırlayamıyorsun neden. Bir evin önünde duruyorsun… kapıya bakıyorsun.\n\nTam kapıyı çalacakken rüya yavaşça dağılıyor.",
+  "mood": "wistful",
+  "symbols": [
+    "door",
+    "bread",
+    "childhood street",
+    "dawn",
+    "empty bakery"
+  ],
+  "color_palette": [
+    "#F4E4C1",
+    "#8B9DC3",
+    "#D4A373",
+    "#E8DCC4"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 4
+  }
+}

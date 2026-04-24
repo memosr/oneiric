@@ -1,0 +1,34 @@
+{
+  "title": "The Digital Menagerie",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "The dreamer wanders through an ethereal landscape, pockets overflowing with spherical capsules containing captured creatures. Each Pokemon represents a fragment of psyche waiting to be integrated."
+    },
+    {
+      "order": 2,
+      "description": "In a misty arena, the dreamer confronts a wild Pokemon in combat. The battle symbolizes the necessary struggle with shadow aspects before they can be tamed and acknowledged."
+    },
+    {
+      "order": 3,
+      "description": "Gathered among friends, the dreamer proudly displays the collected creatures. This revelation represents the integration of discovered self-aspects into social identity and the seeking of collective validation."
+    }
+  ],
+  "symbols": [
+    "pokemon",
+    "collection",
+    "battle",
+    "spherical capsule",
+    "friends"
+  ],
+  "mood": "whimsical",
+  "color_palette": [
+    "#FFCB05",
+    "#3B4CCA",
+    "#7B68EE",
+    "#2F4F4F"
+  ],
+  "jungian_reading_tr": "Rüyanızda Pokemon toplamak, bilinçdışınızdan gelen çeşitli kişilik parçalarını veya gölge yönlerinizi toplama ve entegre etme sürecini temsil eder. Savaş sahnesi, henüz sahiplenmediğiniz psişik içeriklerle yüzleşme çabasını gösterir. Arkadaşlarınıza Pokemonlarınızı göstermek ise, keşfedilen bu içsel yönlerin toplumsal kimliğinizle bütünleşmesi ve dış dünyada kabul görmesi arzusunu simgeler. Bu rüya, içsel bütünlük yolunda bilinçdışı materyalin bilince yükseltilmesi sürecini yansıtır.",
+  "id": "dream_007",
+  "date": "2026-04-24"
+}

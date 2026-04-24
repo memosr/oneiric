@@ -1,0 +1,41 @@
+{
+  "title": "The Cosmic Mirror",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A fog-shrouded city at midnight, illuminated by soft golden street lamps. Wet cobblestones mirror the lights while a distant clock tower stands silent, marking time only through feeling rather than sound."
+    },
+    {
+      "order": 2,
+      "description": "A gentle wind lifts fallen leaves from the ground. As they drift through the air, they transform into glowing fireflies, creating a magical atmosphere as the camera passes through their dancing light."
+    },
+    {
+      "order": 3,
+      "description": "A mysterious lake appears in the city center, its surface reflecting not the sky above but entire galaxies slowly swirling in the depths. A single drop falls, sending ripples that make the cosmic bodies tremble."
+    },
+    {
+      "order": 4,
+      "description": "On the shore stands a lone human silhouette, face hidden, silently contemplating the impossible vista. The camera slowly approaches from behind as the scene quietly fades to black."
+    }
+  ],
+  "symbols": [
+    "golden light",
+    "clock tower",
+    "transforming leaves",
+    "cosmic lake",
+    "silhouette",
+    "reflection",
+    "galaxies",
+    "fog"
+  ],
+  "mood": "ethereal",
+  "color_palette": [
+    "#D4AF37",
+    "#1a1a3e",
+    "#F4E4C1",
+    "#0d3b3b"
+  ],
+  "jungian_reading_tr": "Bu rüya, bireyselleşme sürecinin derin bir yansımasıdır. Sisli şehir bilinçli zihni temsil ederken, altın ışık Kendi'nin (Self) aydınlanmasını simgeler. Yaprakların ateş böceklerine dönüşmesi, ruhsal bir dönüşüm ve alsimi sürecini gösterir. Gökyüzü yerine galaksileri yansıtan göl, kolektif bilinçdışının derinliklerine bir penceredir. Göl kenarındaki siluet, bilinçli benliğin (ego) bilinçdışı evrenle karşılaşmasını temsil eder. Yüzün görünmemesi, bu karşılaşmanın henüz tamamlanmamış, içsel bir süreç olduğunu; damlanın yarattığı titreşimler ise bilinçdışındaki potansiyellerin harekete geçtiğini gösterir.",
+  "id": "dream_004",
+  "date": "2026-04-23"
+}

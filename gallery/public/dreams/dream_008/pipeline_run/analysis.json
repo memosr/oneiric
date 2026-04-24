@@ -1,0 +1,34 @@
+{
+  "title": "Golden Whispers of the Deep",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A solitary figure walks through a hushed forest where ancient trees sway gently. Golden sunlight pierces through the canopy like divine fingers touching the earth."
+    },
+    {
+      "order": 2,
+      "description": "A small stream emerges, its waters holding not fish but slowly drifting orbs of light. These luminescent spheres pulse with an otherworldly, soul-like radiance."
+    },
+    {
+      "order": 3,
+      "description": "As fingers break the water's surface, the entire forest flares with brilliant illumination. The moment passes, leaving behind a profound, integrated stillness."
+    }
+  ],
+  "symbols": [
+    "forest",
+    "stream",
+    "glowing orbs",
+    "golden light",
+    "water"
+  ],
+  "mood": "luminous",
+  "color_palette": [
+    "#2D4A3E",
+    "#D4AF37",
+    "#87CEEB",
+    "#F5F5DC"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinçdışıyla kurulan derin bir bağın sembolüdür. Orman, kolektif bilinçdışının ve henüz keşfedilmemiş öz potansiyellerinin alanıdır. Suyun içindeki ışıklar, anima'nın -ruhun- parlayan yönlerini temsil eder; bilinçdışının derinliklerinden yüzeye çıkan kutsal içeriğin işaretleridir. Suya dokunmakla ormanın aydınlanması, bilinçdışıyla kurulan bu temasın bireyi aydınlattığı ve bütünleşme sürecinde (individuation) önemli bir anı yaşadığını gösterir.",
+  "id": "dream_008",
+  "date": "2026-04-24"
+}
