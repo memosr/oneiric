@@ -1,0 +1,28 @@
+{
+  "id": "dream_009",
+  "date": "2026-04-24",
+  "dreamer": "@memo_cc",
+  "title": "The Levitating Shadow",
+  "transcript_tr": "Geniş bir çayırdasın… dizlerine kadar uzanan otlar rüzgarla dalga dalga hareket ediyor. Gökyüzü açık mavi, ama bulutlar çok yavaş değil, sanki biraz hızlandırılmış gibi akıyor.\n\nUzakta tek başına duran büyük bir ağaç var. Ona doğru yürüdükçe etraf sessizleşiyor. Ağacın altına vardığında gölgesinin normal olmadığını fark ediyorsun… gölge yerde değil, hafifçe havada duruyor.\n\nElini uzatıp gölgeye dokunuyorsun.\n\nBir an için rüzgar duruyor.",
+  "mood": "ethereal",
+  "symbols": [
+    "tree",
+    "shadow",
+    "meadow",
+    "wind",
+    "silence"
+  ],
+  "color_palette": [
+    "#7B9E6B",
+    "#87CEEB",
+    "#5C4A6B",
+    "#F5E6C8"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

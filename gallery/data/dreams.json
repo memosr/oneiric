@@ -94,5 +94,14 @@
     "archetype": "self",
     "dreamer": "@memo_cc",
     "is_fictional": false
+  },
+  {
+    "id": "dream_009",
+    "date": "2026-04-24",
+    "title": "The Levitating Shadow",
+    "path": "public/dreams/dream_009/",
+    "thumbnail": "card.png",
+    "mood": "ethereal",
+    "dreamer": "@memo_cc"
   }
 ]
