@@ -10,6 +10,7 @@ Built on **[Hermes Agent](https://nous.systems)** by Nous Research · Powered by
 [![Last Commit](https://img.shields.io/github/last-commit/memosr/oneiric)](https://github.com/memosr/oneiric/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/memosr/oneiric)](https://github.com/memosr/oneiric)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Gallery](https://img.shields.io/badge/Live-oneiric--zeta.vercel.app-6b46c1?style=flat)](https://oneiric-zeta.vercel.app)
 
 ---
 
@@ -135,8 +136,9 @@ Oneiric leans on Hermes Agent's three core superpowers:
 
 ## Live Gallery
 
-See the full archive at **[oneiric-memosr.vercel.app](#)**
-(deploying — update this link after Vercel)
+**🌐 [oneiric-zeta.vercel.app](https://oneiric-zeta.vercel.app)** — 
+browse the full dream archive with 8+ cards in grid view. 
+Mobile-first, lightbox enabled.
 
 Or browse the static source at `gallery/`.
 
