@@ -10,7 +10,7 @@ Built on **[Hermes Agent](https://nous.systems)** by Nous Research · Powered by
 [![Last Commit](https://img.shields.io/github/last-commit/memosr/oneiric)](https://github.com/memosr/oneiric/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/memosr/oneiric)](https://github.com/memosr/oneiric)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Gallery](https://img.shields.io/badge/Live-oneiric--zeta.vercel.app-6b46c1?style=flat)](https://oneiric-zeta.vercel.app)
+[![Live](https://img.shields.io/badge/🌐_Live-oneiric--zeta.vercel.app-6b46c1?style=flat)](https://oneiric-zeta.vercel.app)
 
 ---
 
@@ -87,7 +87,7 @@ Oneiric leans on Hermes Agent's three core superpowers:
 ```
 ┌──────────┐   ┌─────────┐   ┌──────────┐   ┌─────────┐   ┌──────────┐
 │transcribe│──→│ analyze │──→│illustrate│──→│  card   │──→│ gallery  │
-│ planned  │   │  done   │   │  done    │   │  done   │   │ planned  │
+│ planned  │   │  done   │   │  done    │   │  done   │   │   done   │
 └──────────┘   └─────────┘   └──────────┘   └─────────┘   └──────────┘
                                     │
                                     ├──→ narrate ──→ compose (film, bonus)
@@ -125,22 +125,52 @@ Oneiric leans on Hermes Agent's three core superpowers:
 - **Dream #003 — *Keys Without Locks* (fictional).** Stress test: absurd cross-species metamorphoses (fish-as-books, chess-knight librarian, key rain). Kimi autonomously produced 4 scenes for this richer dream (pipeline supports 2-5 dynamically). Card shows first 3; scene 4 archived as bonus with provenance notes.
 - Three-dream gallery complete, spanning three Jungian archetypes: **Shadow · Self · Trickster**.
 
-### Next (Day 5+)
-- Extend `card.py` layout to support 4-5 scenes (2x2 grid or vertical stack)
-- Collect 2-3 more real dreams — target archetypes: **Anima**, **Puer**, **Great Mother**, **Hero**
-- Simple HTML gallery (Vercel static deploy) — scrollable card grid + individual dream detail pages with audio playback
-- Demo video (2 min): Telegram voice note → pipeline runtime → card reveal. End frame shows all cards as a grid.
-- Submission: X post tagging @NousResearch, Discord creative-hackathon-submissions channel link
+### Day 5 — 2026-04-24
+
+- **Telegram automation complete:** `@OneiricDreamBot` listens for text
+  dreams and runs the full pipeline end-to-end. Card arrives back as a
+  photo in 3-5 minutes. First real-world test: 5 new dreams archived
+  automatically (Dreams #004 through #008), spanning moods from
+  ethereal to whimsical to luminous.
+- **pipeline/main.py** — end-to-end orchestrator (transcript → analyze →
+  illustrate → card → dream.json → dreams.json update)
+- **pipeline/listener.py** — python-telegram-bot v22 daemon with allowlist,
+  async pipeline invocation, error-safe card delivery
+- **Gallery normalized:** `dreams.json` schema unified across all 8 dreams
+  (thumbnail: card.png, dreamer, archetype, mood for every entry)
+- **Static HTML gallery** (`gallery/index.html` + `script.js`): responsive
+  grid, lightbox modal, Playfair Display typography, mobile-first
+- **Live on Vercel:** `oneiric-zeta.vercel.app`. GitHub push triggers
+  automatic redeploy, so the gallery grows with every new dream sent to
+  the bot.
+- **Three archetypes × five moods on the gallery:** shadow, self,
+  trickster, anima, puer.
+
+### Next (Day 6+)
+- Demo video (2 min) for hackathon submission — storyboard, screen capture,
+  voiceover, final grid reveal
+- Invite friends to @OneiricDreamBot — real-world user testing, collect
+  dream cards from others
+- Extend card.py to support 4-5 scene layouts (Dream #003 has a bonus
+  scene #4 archived but unused in its card)
+- X (Twitter) post draft tagging @NousResearch + Discord submission to
+  `creative-hackathon-submissions` channel
+- Polish & buffer days — May 1-3
 
 ---
 
-## Live Gallery
+## 🌐 Live Gallery
 
-**🌐 [oneiric-zeta.vercel.app](https://oneiric-zeta.vercel.app)** — 
-browse the full dream archive with 8+ cards in grid view. 
-Mobile-first, lightbox enabled.
+**[oneiric-zeta.vercel.app](https://oneiric-zeta.vercel.app)**
 
-Or browse the static source at `gallery/`.
+Browse the full dream archive — 8 cards in a responsive 9:16 grid with
+lightbox. Mobile-first. Auto-deploys on every new dream via the
+Telegram pipeline.
+
+**Try it:** send a dream as text to
+**[@OneiricDreamBot](https://t.me/OneiricDreamBot)** on Telegram.
+Your card arrives in 3-5 minutes, gallery updates automatically
+on next git push.
 
 ---
 
