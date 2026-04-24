@@ -1,0 +1,19 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/gallery/index.html" },
+    { "source": "/index.html", "destination": "/gallery/index.html" },
+    { "source": "/script.js", "destination": "/gallery/script.js" },
+    { "source": "/data/:path*", "destination": "/gallery/data/:path*" },
+    { "source": "/public/:path*", "destination": "/gallery/public/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/gallery/public/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
