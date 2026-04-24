@@ -2,7 +2,7 @@
 Oneiric Telegram listener.
 Polls @OneiricDreamBot for text messages, runs pipeline, sends card back.
 """
-import os, sys, logging, asyncio
+import os, sys, logging, asyncio, subprocess
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -30,6 +30,36 @@ if _raw:
     ALLOWED = {int(x.strip()) for x in _raw.split(",") if x.strip()}
 
 PROJECT_ROOT = Path(__file__).parent.parent
+
+
+def git_auto_commit(dream_id: str, dream_title: str) -> bool:
+    """
+    Stage the new dream dir + updated dreams.json, commit, push.
+    Returns True if successful, False on any error.
+    """
+    try:
+        subprocess.run(
+            ["git", "add",
+             f"gallery/public/dreams/{dream_id}/",
+             "gallery/data/dreams.json"],
+            cwd=PROJECT_ROOT, check=True, timeout=30
+        )
+        subprocess.run(
+            ["git", "commit", "-m",
+             f"feat(gallery): auto-archive {dream_id} — {dream_title}"],
+            cwd=PROJECT_ROOT, check=True, timeout=30
+        )
+        subprocess.run(
+            ["git", "push"],
+            cwd=PROJECT_ROOT, check=True, timeout=60
+        )
+        return True
+    except subprocess.CalledProcessError as e:
+        log.error(f"Git auto-commit failed: {e}")
+        return False
+    except subprocess.TimeoutExpired:
+        log.error("Git push timed out")
+        return False
 
 
 def _is_allowed(user_id: int) -> bool:
@@ -139,6 +169,14 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                         f"Pipeline: {result['duration_sec']}s"
                     ),
                     parse_mode="Markdown",
+                )
+            pushed = await loop.run_in_executor(
+                None,
+                lambda: git_auto_commit(dream_id, result["stages"].get("analyze", {}).get("title", dream_id))
+            )
+            if pushed:
+                await update.message.reply_text(
+                    "🌐 Your card is now live at oneiric-zeta.vercel.app"
                 )
         else:
             await update.message.reply_text("Card was generated but file is missing.")
