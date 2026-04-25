@@ -188,7 +188,7 @@ def translate_symbols(symbols: list[str], cache_path: Path,
 
 def _smart_truncate(text: str, max_chars: int) -> str:
     """Truncate at sentence boundary ≤ max_chars. Append '...' only if cut."""
-    text = " ".join(text.split())  # normalize whitespace and newlines
+    text = re.sub(r'\s+', ' ', text).strip()
     if len(text) <= max_chars:
         return text
     chunk = text[:max_chars]
@@ -196,8 +196,10 @@ def _smart_truncate(text: str, max_chars: int) -> str:
     m = list(re.finditer(r'[.!?]', chunk))
     if m:
         return text[:m[-1].end()].strip()
-    # No sentence end — cut at last word boundary
-    return chunk.rsplit(" ", 1)[0].rstrip() + "..."
+    # No sentence end — cut at last word boundary (trim to max_chars after adding "...")
+    base = chunk.rsplit(" ", 1)[0].rstrip()
+    result = base + "..."
+    return result if len(result) <= max_chars else result[:max_chars - 3].rsplit(" ", 1)[0].rstrip() + "..."
 
 
 def _extract_memory_clause(sentence: str, memory_keywords: list) -> str:
@@ -205,6 +207,8 @@ def _extract_memory_clause(sentence: str, memory_keywords: list) -> str:
     From a long sentence with memory reference, extract the smallest
     sub-clause that still contains the memory keyword and reads naturally.
     """
+    sentence = re.sub(r'\s+', ' ', sentence).strip()
+
     def _cap(s: str) -> str:
         return s[0].upper() + s[1:] if s else s
 
@@ -236,11 +240,11 @@ def _smart_truncate_with_memory(text: str, max_chars: int = 320) -> str:
     Memory references include phrases like 'önceki rüya', 'previously',
     'recurring', 'pattern', dream titles in quotes, etc.
     """
-    text = " ".join(text.split())
+    text = re.sub(r'\s+', ' ', text).strip()
     if len(text) <= max_chars:
         return text
 
-    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    sentences = re.split(r'(?<=[.!?])\s+', text)
 
     if not sentences:
         return text[:max_chars]
@@ -283,6 +287,16 @@ def _smart_truncate_with_memory(text: str, max_chars: int = 320) -> str:
         if selected_chars + len(memory_sentence) + 1 <= max_chars:
             selected.append(memory_sentence)
             selected_chars += len(memory_sentence) + 1
+        else:
+            # First sentence too long — trim it to make room for memory sentence
+            needed = max_chars - len(memory_sentence) - 1
+            if needed >= 80:
+                s0_trimmed = _smart_truncate(sentences[0], needed)
+                selected = [s0_trimmed]
+                selected_chars = len(s0_trimmed)
+                if selected_chars + len(memory_sentence) + 1 <= max_chars:
+                    selected.append(memory_sentence)
+                    selected_chars += len(memory_sentence) + 1
 
     # Fill remaining space with subsequent sentences
     for i, s in enumerate(sentences[1:], 1):
