@@ -181,6 +181,7 @@ def analyze_dream(
     transcript: str,
     dream_id: str | None = None,
     output_path: Path | None = None,
+    user_id: str | None = None,
 ) -> dict:
     """
     Analyze a Turkish dream transcript using Hermes + Kimi K2.5.
@@ -189,6 +190,7 @@ def analyze_dream(
         transcript: Raw dream transcript (Turkish text)
         dream_id: Optional ID for the dream (e.g., "dream_002")
         output_path: Optional path to write the JSON output
+        user_id: Optional Telegram user ID for memory context injection
 
     Returns:
         Dict matching the analysis schema
@@ -197,6 +199,12 @@ def analyze_dream(
         RuntimeError if Hermes call fails or returns invalid JSON
     """
     prompt = _ANALYSIS_PROMPT_TEMPLATE.format(transcript=transcript.strip())
+
+    if user_id:
+        from memory import context_for_kimi
+        memory_ctx = context_for_kimi(str(user_id))
+        if memory_ctx:
+            prompt = prompt + memory_ctx
 
     raw_output = _call_hermes(prompt)
     result = _parse_json(raw_output, raw_output)

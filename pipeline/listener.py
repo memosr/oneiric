@@ -142,7 +142,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         os.chdir(PROJECT_ROOT)
         result = await loop.run_in_executor(
             None,
-            lambda: run_pipeline(text, dream_dir, dream_id, dreamer),
+            lambda: run_pipeline(text, dream_dir, dream_id, dreamer, user_id=str(user.id)),
         )
     except Exception as e:
         log.exception(f"Pipeline crashed for {dream_id}")

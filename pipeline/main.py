@@ -12,11 +12,22 @@ from illustrate import illustrate_dream
 from card import generate_card
 
 
+def _archetype_from_mood(mood: str) -> str:
+    return {
+        "uncanny": "shadow", "foreboding": "shadow",
+        "transcendent": "self", "luminous": "self",
+        "liminal": "trickster", "absurd": "trickster",
+        "ethereal": "anima", "wistful": "anima",
+        "whimsical": "puer", "joyful": "puer",
+    }.get((mood or "").lower(), "unknown")
+
+
 def run_pipeline(
     transcript: str,
     dream_dir: Path,
     dream_id: str,
     dreamer: str = "anonymous",
+    user_id: str | None = None,
 ) -> dict:
     """
     Run the full dream → card pipeline.
@@ -58,7 +69,7 @@ def run_pipeline(
         # ── Stage 1: Analyze ──────────────────────────────────────────────────
         print(f"[{dream_id}] Analyzing...", flush=True)
         analysis_path = pipeline_run / "analysis.json"
-        analysis = analyze_dream(transcript, dream_id, analysis_path)
+        analysis = analyze_dream(transcript, dream_id, analysis_path, user_id=user_id)
         result["stages"]["analyze"] = {
             "status": "success",
             "scene_count": len(analysis.get("scenes", [])),
@@ -150,6 +161,17 @@ def run_pipeline(
             json.dumps(dreams_list, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
+
+        if user_id:
+            from memory import update_profile
+            update_profile(
+                user_id=str(user_id), username=dreamer,
+                dream_id=dream_id, title=analysis.get("title", "?"),
+                archetype=dream_json_data.get("archetype") or
+                          _archetype_from_mood(analysis.get("mood")),
+                mood=analysis.get("mood"),
+                symbols=analysis.get("symbols", []),
+            )
 
         result["status"] = "success"
 
