@@ -1,0 +1,30 @@
+{
+  "id": "dream_010",
+  "date": "2026-04-25",
+  "dreamer": "@memo_cc",
+  "title": "Shadow on Still Waters",
+  "transcript_tr": "You’re standing on a quiet beach at sunset… the sky is soft orange and pink, and the waves move slowly, almost silently.\n\nAs you walk along the shore, you notice your footprints don’t stay on the sand—they fade away after a few seconds, as if the beach is gently erasing them.\n\nIn the distance, there’s a small wooden boat floating near the water, but it’s not moving with the waves. It just stays still.\n\nYou step closer… and suddenly realize the reflection in the water isn’t you.\n\nIt’s someone else, standing in your place.",
+  "mood": "liminal",
+  "symbols": [
+    "beach",
+    "sunset",
+    "fading footprints",
+    "motionless boat",
+    "water",
+    "reflection",
+    "shadow self"
+  ],
+  "color_palette": [
+    "#FF8C69",
+    "#F4C2C2",
+    "#2C3E50",
+    "#1A1A2E"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 4
+  }
+}

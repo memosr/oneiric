@@ -103,5 +103,14 @@
     "thumbnail": "card.png",
     "mood": "ethereal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_010",
+    "date": "2026-04-25",
+    "title": "Shadow on Still Waters",
+    "path": "public/dreams/dream_010/",
+    "thumbnail": "card.png",
+    "mood": "liminal",
+    "dreamer": "@memo_cc"
   }
 ]

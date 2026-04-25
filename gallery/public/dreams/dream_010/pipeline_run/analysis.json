@@ -1,0 +1,40 @@
+{
+  "title": "Shadow on Still Waters",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A solitary figure stands on an empty beach as the sun bleeds orange and pink across the horizon. The ocean breathes slowly, its waves whispering secrets in a language just beyond understanding."
+    },
+    {
+      "order": 2,
+      "description": "The dreamer walks along the wet sand, leaving footprints that vanish within seconds, as if the shore itself refuses to remember their passage. Each step becomes an act of gentle erasure."
+    },
+    {
+      "order": 3,
+      "description": "A small wooden boat floats motionless in the distance, defying the tide's pull, suspended between departure and arrival. It waits like a forgotten promise."
+    },
+    {
+      "order": 4,
+      "description": "Drawing closer to the water's edge, the dreamer glimpses the surface and freezes. The reflection staring back is not their own face, but a stranger wearing their body like a mask."
+    }
+  ],
+  "symbols": [
+    "beach",
+    "sunset",
+    "fading footprints",
+    "motionless boat",
+    "water",
+    "reflection",
+    "shadow self"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#FF8C69",
+    "#F4C2C2",
+    "#2C3E50",
+    "#1A1A2E"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinçdışının bilince sunduğu derin bir gölge tezahürüdür. Suda görülen yabancı yansıma, bireyin kabul etmediği veya bastırdığı Gölge arketipinin somutlaşmış halidir. Silinen ayak izleri, egonun geçiciliğini ve maddi dünyada kalıcı iz bırakma çabasının nafileliğini simgeler. Hareketsiz tekne ise, ruhsal bütünlüğe (Öz) ulaşma yolculuğunda yaşanan askıya alınmışlık hissini, içsel dönüşümün henüz tamamlanmamış olduğunu gösterir. Gün batımı, bilinç ile bilinçdışı arasındaki eşikte duran liminal bir zamandır.",
+  "id": "dream_010",
+  "date": "2026-04-25"
+}
