@@ -2,6 +2,8 @@
 Oneiric main orchestrator.
 Given a dream transcript, produces a full archived dream with card.
 """
+from __future__ import annotations
+
 from pathlib import Path
 import argparse, json, sys, time
 from datetime import datetime, timezone
