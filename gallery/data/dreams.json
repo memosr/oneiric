@@ -112,5 +112,14 @@
     "thumbnail": "card.png",
     "mood": "liminal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_012",
+    "date": "2026-04-25",
+    "title": "Silent Waters, Golden Truth",
+    "path": "public/dreams/dream_012/",
+    "thumbnail": "card.png",
+    "mood": "transcendent",
+    "dreamer": "@memo_cc"
   }
 ]
