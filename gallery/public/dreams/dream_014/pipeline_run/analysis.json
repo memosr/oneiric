@@ -1,0 +1,34 @@
+{
+  "title": "The Veil of the Already-Open",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A dreamer stands in a corridor that exists between waking and sleeping, neither fully inside nor outside. The walls tremble like thin tulle, and when they touch the fabric, their fingers pass through to the other side while they remain anchored in place."
+    },
+    {
+      "order": 2,
+      "description": "Before them stands a door bearing no number and no name, its surface smooth and handleless. They reach to open it but find nothing to grasp, until the slow realization dawns: the door was never closed, only their perception of it was."
+    },
+    {
+      "order": 3,
+      "description": "They step across the threshold into an unknown direction, the boundary crossed but its orientation lost. The passage is complete yet undefined, leaving them suspended between here and there."
+    }
+  ],
+  "symbols": [
+    "veil",
+    "door",
+    "threshold",
+    "permeable walls",
+    "handleless passage"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#E8D5E0",
+    "#A89CA8",
+    "#6B5B73",
+    "#F5E6D3"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinç ile bilinçdışı arasındaki zarın ne kadar ince olduğunu gösteriyor — tül gibi titreşen duvarlar, dokunduğunuzda parmaklarınızın öte tarafa geçmesi, sınırın yanılsama olduğunu fark etmeniz. Kulpsuz kapı, zorla açılamayacak bir bilinç durumunu temsil eder; ancak kapının aslında açık olduğunu keşfetmeniz, Öz'ün (Self) her zaman erişilebilir olduğunu ama bunun farkına varmayı gerektirdiğini gösterir. Önceki rüyalarınızdaki eşiklerde (istasyon, sonsuz koridor) olduğu gibi, burada da Aldatıcı (Trickster) arketipi iş başındadır — görünüşte kapalı olanın açık, içeride olanın dışarıda olduğu bir alanda yön duygunuzu yitirirsiniz. Hangi tarafa geçtiğinizi bilmemeniz, bütünlüğe giden yolun belirsizliği içinde bilinçdışına doğru ilerlediğinizi gösterir.",
+  "id": "dream_014",
+  "date": "2026-04-25"
+}

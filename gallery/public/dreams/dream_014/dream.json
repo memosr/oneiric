@@ -1,0 +1,28 @@
+{
+  "id": "dream_014",
+  "date": "2026-04-25",
+  "dreamer": "@memo_cc",
+  "title": "The Veil of the Already-Open",
+  "transcript_tr": "Rüyamda yarı uyanık, yarı uykuda bir koridordaydım. Ne tam içerideydim ne dışarıda. Duvarlar ince bir tül gibi titriyordu, dokunduğumda parmaklarım öbür tarafa geçiyordu ama ben hâlâ buradaydım. Önümde sadece bir kapı vardı, üzerinde sayı yoktu, isim yoktu. Açmaya çalıştım ama kolu yoktu. Sonra anladım — kapı zaten açıktı, ben onu fark etmemiştim. Eşikten geçtim, ama hangi tarafa geçtiğimden emin değildim.",
+  "mood": "liminal",
+  "symbols": [
+    "veil",
+    "door",
+    "threshold",
+    "permeable walls",
+    "handleless passage"
+  ],
+  "color_palette": [
+    "#E8D5E0",
+    "#A89CA8",
+    "#6B5B73",
+    "#F5E6D3"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

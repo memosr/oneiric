@@ -130,5 +130,14 @@
     "thumbnail": "card.png",
     "mood": "liminal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_014",
+    "date": "2026-04-25",
+    "title": "The Veil of the Already-Open",
+    "path": "public/dreams/dream_014/",
+    "thumbnail": "card.png",
+    "mood": "liminal",
+    "dreamer": "@memo_cc"
   }
 ]
