@@ -200,6 +200,100 @@ def _smart_truncate(text: str, max_chars: int) -> str:
     return chunk.rsplit(" ", 1)[0].rstrip() + "..."
 
 
+def _extract_memory_clause(sentence: str, memory_keywords: list) -> str:
+    """
+    From a long sentence with memory reference, extract the smallest
+    sub-clause that still contains the memory keyword and reads naturally.
+    """
+    def _cap(s: str) -> str:
+        return s[0].upper() + s[1:] if s else s
+
+    for delim in [';', ' — ', ' - ']:
+        if delim in sentence:
+            parts = [p.strip() for p in sentence.split(delim)]
+            for p in parts:
+                if any(kw in p.lower() for kw in memory_keywords):
+                    if len(p) <= 200:
+                        return _cap(p.rstrip('.,;')) + '.'
+
+    # Fallback: split on commas, find clause with memory keyword
+    parts = [p.strip() for p in sentence.split(',')]
+    for i, p in enumerate(parts):
+        if any(kw in p.lower() for kw in memory_keywords):
+            start = max(0, i)
+            end = min(len(parts), i + 2)
+            extracted = ', '.join(parts[start:end]).strip()
+            if len(extracted) <= 200:
+                return _cap(extracted.rstrip('.,;')) + '.'
+
+    # Last resort: truncate at 180 chars
+    return _cap(sentence[:180].rsplit(' ', 1)[0]) + '...'
+
+
+def _smart_truncate_with_memory(text: str, max_chars: int = 320) -> str:
+    """
+    Truncate Jungian reading, prioritizing sentences with memory references.
+    Memory references include phrases like 'önceki rüya', 'previously',
+    'recurring', 'pattern', dream titles in quotes, etc.
+    """
+    text = " ".join(text.split())
+    if len(text) <= max_chars:
+        return text
+
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+
+    if not sentences:
+        return text[:max_chars]
+
+    memory_keywords = [
+        'önceki rüya', 'önceki r üya', 'previous dream', 'recurring',
+        'pattern', 'daha önce', 'tekrarl', 'continuation',
+    ]
+
+    def has_memory_ref(s):
+        s_low = s.lower()
+        return any(kw in s_low for kw in memory_keywords)
+
+    # Priority order:
+    # 1. First sentence (sets context)
+    # 2. First sentence with memory reference (the magic moment)
+    # 3. Continue normally if room remains
+
+    selected = [sentences[0]]
+    selected_chars = len(sentences[0])
+
+    # Find first memory sentence (skip [0] since already added)
+    memory_idx = next(
+        (i for i, s in enumerate(sentences[1:], 1) if has_memory_ref(s)),
+        None
+    )
+
+    if memory_idx is not None and memory_idx > 1:
+        memory_sentence = sentences[memory_idx]
+
+        # If memory sentence too long, extract just the memory clause
+        if len(memory_sentence) > 200:
+            memory_sentence = _extract_memory_clause(
+                memory_sentence, memory_keywords
+            )
+
+        if selected_chars + len(memory_sentence) + 1 <= max_chars:
+            selected.append(memory_sentence)
+            selected_chars += len(memory_sentence) + 1
+
+    # Fill remaining space with subsequent sentences
+    for i, s in enumerate(sentences[1:], 1):
+        if i == memory_idx:
+            continue  # already added
+        if selected_chars + len(s) + 1 > max_chars:
+            break
+        selected.append(s)
+        selected_chars += len(s) + 1
+
+    result = " ".join(selected)
+    return result if len(result) <= max_chars + 50 else result[:max_chars] + "..."
+
+
 def _wrap_lines(draw: ImageDraw.ImageDraw, text: str,
                 font: ImageFont.FreeTypeFont, max_width: int) -> list[str]:
     """Word-wrap text to fit max_width pixels."""
@@ -380,7 +474,7 @@ def generate_card(
         scenes = analysis.get("scenes", [])
         first_desc = scenes[0]["description"] if scenes else ""
         transcript_snippet = _smart_truncate(first_desc, 280) if first_desc else ""
-        jung_snippet = _smart_truncate(jung_en, 280) if jung_en else ""
+        jung_snippet = _smart_truncate_with_memory(jung_en, 320) if jung_en else ""
 
         # ── Scene images ──────────────────────────────────────────────────────
         scene_paths = sorted(scene_dir.glob("scene_*.jpeg"))[:3]
