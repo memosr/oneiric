@@ -248,6 +248,9 @@ def _smart_truncate_with_memory(text: str, max_chars: int = 320) -> str:
     memory_keywords = [
         'önceki rüya', 'önceki r üya', 'previous dream', 'recurring',
         'pattern', 'daha önce', 'tekrarl', 'continuation',
+        'as in the earlier', 'earlier', 'as you', 'in your previous',
+        'parallels your', 'mirroring your', 'consistent with',
+        'similar to', 'echoes', 'just as in',
     ]
 
     def has_memory_ref(s):
