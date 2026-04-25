@@ -1,0 +1,29 @@
+{
+  "id": "dream_013",
+  "date": "2026-04-25",
+  "dreamer": "@memo_cc",
+  "title": "The Station of Stopped Time",
+  "transcript_tr": "Rüyamda eski bir tren istasyonundaydım. Saatler durmuş, peronlar boştu. Bavulumu bıraktım ama ne kadar uzaklaşsam da onu hâlâ elimde tutuyordum. Bilet gişesindeki adam bana baktı ve \"her bilet aynı yere gider\" dedi. Trene bindim, vagon içeride sonsuz bir koridordu, kapılar hiç bitmiyordu.",
+  "mood": "liminal",
+  "symbols": [
+    "station",
+    "stopped clocks",
+    "luggage",
+    "ticket",
+    "infinite corridor",
+    "doors"
+  ],
+  "color_palette": [
+    "#4A4E69",
+    "#9A8C98",
+    "#C9BBAF",
+    "#22223B"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "title": "The Station of Stopped Time",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "An abandoned train station frozen in time, with dust-covered clocks stopped at impossible hours and empty platforms stretching into gray fog. The dreamer stands holding a suitcase that cannot be released despite every attempt to set it down."
+    },
+    {
+      "order": 2,
+      "description": "At a marble ticket counter, a clerk delivers an oracle-like message that every ticket leads to the same destination, suggesting an inevitable fate or universal endpoint. The statement hangs in the air like a riddle from a trickster guide."
+    },
+    {
+      "order": 3,
+      "description": "Inside the train, the architecture defies geometry as the corridor extends infinitely with endless identical doors receding into darkness. Each door opens only to reveal another door, symbolizing the psyche's boundless depth."
+    }
+  ],
+  "symbols": [
+    "station",
+    "stopped clocks",
+    "luggage",
+    "ticket",
+    "infinite corridor",
+    "doors"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#4A4E69",
+    "#9A8C98",
+    "#C9BBAF",
+    "#22223B"
+  ],
+  "jungian_reading_tr": "Bu rüya, bireyselleşme sürecindeki bir eşik durumunu yansıtıyor; durmuş saatler bilinçdışının zaman-dışı alanını, terk edilemeyen bavul ise bilinçdışına bırakılamayan bir kompleksi temsil ediyor. Gişedeki adamın 'her bilet aynı yere gider' sözü, hayattaki tüm yolların Öz'e veya son evrensel gerçeğe doğru gittiğini belirten bir bilge-trickster arketipinin mesajıdır. Daha önceki 'Kutsal Eşikler' rüyasındaki gibi, rüya gören yine iki dünya arasındaki geçiş alanında durmaktadır; sonsuz koridor ise psikenin derinliklerindeki sınırsız yolculuğu ve bilincin genişlemesinin hiç bitmeyen sürecini gösterir.",
+  "id": "dream_013",
+  "date": "2026-04-25"
+}

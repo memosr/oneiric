@@ -121,5 +121,14 @@
     "thumbnail": "card.png",
     "mood": "transcendent",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_013",
+    "date": "2026-04-25",
+    "title": "The Station of Stopped Time",
+    "path": "public/dreams/dream_013/",
+    "thumbnail": "card.png",
+    "mood": "liminal",
+    "dreamer": "@memo_cc"
   }
 ]
