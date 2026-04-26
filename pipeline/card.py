@@ -275,7 +275,7 @@ def _smart_truncate_with_memory(text: str, max_chars: int = 320) -> str:
         None
     )
 
-    if memory_idx is not None and memory_idx > 1:
+    if memory_idx is not None and memory_idx >= 1:
         memory_sentence = sentences[memory_idx]
 
         # If memory sentence too long, extract just the memory clause
