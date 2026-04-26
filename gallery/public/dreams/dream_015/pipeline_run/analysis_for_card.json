@@ -1,0 +1,35 @@
+{
+  "title": "The Waiting Shadow",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A silent street at dawn, wet stones glistening beneath the first light filtering through buildings. In the distance, an old clock tower stands as a faint silhouette against the pale morning sky."
+    },
+    {
+      "order": 2,
+      "description": "The street dissolves into a meadow where grasses sway in an invisible wind. Small pale lights flicker between the blades like memories of fallen leaves, animate and watchful."
+    },
+    {
+      "order": 3,
+      "description": "The meadow yields to a shore where waves sound but the water's surface holds something strange. Peering in, galaxy-like lights spiral in the depths—a glimpse of the cosmic unconscious."
+    }
+  ],
+  "symbols": [
+    "shadow",
+    "clock tower",
+    "galaxy water",
+    "flickering lights",
+    "boat",
+    "wet stones"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#2C3E50",
+    "#D4C4B0",
+    "#4A6741",
+    "#1A1F3D"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinçdışının bilince doğru yaptığı nazik bir yaklaşmayı gösteriyor. Gölgenin bu kez hareket etmesi ve bekliyor olması, daha önceki eşik ve kapı rüyalarında karşılaştığınız liminal alanlarda yaşanan dönüşümün devamı niteliğinde. Su yüzeyindeki galaksi ışıkları, bireysel bilinçdışınızın kolektif bilinçdışıyla bağlantı kurduğunu, saatin durduğu istasyon rüyasındaki zamansızlığın burada uzamsal bir derinliğe dönüştüğünü işaret ediyor. Yere değmeyen gölge henüz tam olarak somutlaşmamış olsa da, ona doğru yaklaşmanız arketipsel bir bütünleşme sürecinin eşiğinde olduğunuzu gösteriyor.",
+  "id": "dream_015",
+  "date": "2026-04-26"
+}

@@ -139,5 +139,14 @@
     "thumbnail": "card.png",
     "mood": "liminal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_015",
+    "date": "2026-04-26",
+    "title": "The Waiting Shadow",
+    "path": "public/dreams/dream_015/",
+    "thumbnail": "card.png",
+    "mood": "liminal",
+    "dreamer": "@memo_cc"
   }
 ]

@@ -1,0 +1,29 @@
+{
+  "id": "dream_015",
+  "date": "2026-04-26",
+  "dreamer": "@memo_cc",
+  "title": "The Waiting Shadow",
+  "transcript_tr": "Sessiz bir sokakta yürüyorsun… sabahın ilk ışıkları yine binaların arasından süzülüyor. Islak taşlar hafifçe parlıyor. Uzakta, daha önce gördüğün o eski saat kulesi silik bir şekilde seçiliyor.\n\nSokağın sonuna geldiğinde, yol yine yumuşak bir geçişle çayıra açılıyor. Otlar rüzgarla dalgalanıyor… ama bu sefer aralarında küçük, soluk ışıklar yanıp sönüyor; sanki o eski yaprakların hatırası gibi.\n\nİlerledikçe çayır sahile dönüşüyor. Dalga sesi var ama suyun yüzeyi garip… içine baktığında, kısa bir an için o galaksi gibi dönen ışıkları görüyorsun.\n\nKıyıda, o küçük tekne yine duruyor. Hemen yanında, yere değmeyen o tanıdık gölge.\n\nBu kez gölge hafifçe hareket ediyor.\n\nVe sen yaklaşırken… sanki seni bekliyormuş gibi duruyor.",
+  "mood": "liminal",
+  "symbols": [
+    "shadow",
+    "clock tower",
+    "galaxy water",
+    "flickering lights",
+    "boat",
+    "wet stones"
+  ],
+  "color_palette": [
+    "#2C3E50",
+    "#D4C4B0",
+    "#4A6741",
+    "#1A1F3D"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 4
+  }
+}
