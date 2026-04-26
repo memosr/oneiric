@@ -148,5 +148,14 @@
     "thumbnail": "card.png",
     "mood": "liminal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_016",
+    "date": "2026-04-26",
+    "title": "The Mirror of Becoming",
+    "path": "public/dreams/dream_016/",
+    "thumbnail": "card.png",
+    "mood": "contemplative",
+    "dreamer": "@memo_cc"
   }
 ]

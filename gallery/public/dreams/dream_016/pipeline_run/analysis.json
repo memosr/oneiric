@@ -1,0 +1,47 @@
+{
+  "title": "The Mirror of Becoming",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A narrow stone path stretches ahead, wet ground reflecting yellow lamplight. The silence is broken only by a distant, familiar bird call echoing through the stillness."
+    },
+    {
+      "order": 2,
+      "description": "At the path's end stands a small bakery with its door ajar. Warm bread scent drifts outward as steam rises from the counter, transforming into particles of light that dissolve into the air."
+    },
+    {
+      "order": 3,
+      "description": "The path opens into a vast meadow where wind ripples through tall grass. A solitary tree stands in the distance, its shadow subtly stirring as though aware of your presence."
+    },
+    {
+      "order": 4,
+      "description": "The meadow becomes a quiet shore with gentle waves lapping at the sand. A small boat rests at the water's edge, waiting."
+    },
+    {
+      "order": 5,
+      "description": "Gazing into the water, you see not just a reflection but all previous moments—the street, bakery, meadow, and shadow—existing simultaneously. The surface then stills, and silence returns as if nothing occurred."
+    }
+  ],
+  "symbols": [
+    "stone path",
+    "bakery",
+    "steam becoming light",
+    "meadow",
+    "lone tree",
+    "moving shadow",
+    "shore",
+    "boat",
+    "water mirror",
+    "simultaneous reflection"
+  ],
+  "mood": "contemplative",
+  "color_palette": [
+    "#D4A574",
+    "#F5E6C8",
+    "#7B9E6B",
+    "#5B8BA0"
+  ],
+  "jungian_reading_tr": "Bu rüya, önceki liminal ve trickster temalarından farklı olarak bütünleşme yolunda bir ilerlemeyi gösteriyor. Su yüzeyinde önceki anların tümünün aynı anda görünmesi, bilinçdışının bireyselleşme yolculuğunun desenini açığa çıkardığı anı simgeler. Kıpırdayan gölge—muhtemelen Kendi arketipinin bir tezahürü—nihayet sizi fark ediyor ve varlığınızı onaylıyor. Fırından yükselen buharın ışık parçacıklarına dönüşmesi, maddesel deneyimin ruhsal aydınlanmaya transmutasyonunu temsil eder. Sondaki sessizlik, bilinç ile bilinçdışı arasında geçici bir uzlaşma veya Self'e dönüş anlamına gelir. Önceki rüyalardaki bekleyiş ve eşikler, bu rüyada suyun aynasındaki bütünlük halinde çözülüyor.",
+  "id": "dream_016",
+  "date": "2026-04-26"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "dream_016",
+  "date": "2026-04-26",
+  "dreamer": "@memo_cc",
+  "title": "The Mirror of Becoming",
+  "transcript_tr": "Dar bir taş yolda yürüyorsun… zemin hafif ıslak, lambaların sarı ışığı yerde yansıyor. Hava sessiz, sadece çok uzaktan tanıdık bir kuş sesi geliyor.\n\nYolun sonunda yine o küçük fırın var. Kapı aralık… içeriden sıcak ekmek kokusu geliyor. Ama bu sefer içeri baktığında tezgâhın üzerindeki buhar, küçük ışık parçacıklarına dönüşüp havaya karışıyor.\n\nYürümeye devam edince yol, yavaşça o geniş çayıra açılıyor. Rüzgar otları dalgalandırıyor. Uzakta tek başına duran ağaç yine orada… ama gölgesi bu kez hafifçe kıpırdıyor, sanki seni fark etmiş gibi.\n\nBir adım daha attığında çayır sahile dönüşüyor. Dalgalar sakin… kıyıda o küçük tekne duruyor.\n\nVe suya baktığında, bu kez sadece başka birini değil…\n\nönceki bütün anların kısa kısa yansımalarını görüyorsun.\n\nSokak, fırın, çayır, gölge…\n\nHepsi aynı anda orada.\n\nSonra su yüzeyi duruluyor.\n\nVe hiçbir şey olmamış gibi sessizlik geri geliyor.",
+  "mood": "contemplative",
+  "symbols": [
+    "stone path",
+    "bakery",
+    "steam becoming light",
+    "meadow",
+    "lone tree",
+    "moving shadow",
+    "shore",
+    "boat",
+    "water mirror",
+    "simultaneous reflection"
+  ],
+  "color_palette": [
+    "#D4A574",
+    "#F5E6C8",
+    "#7B9E6B",
+    "#5B8BA0"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 5
+  }
+}
