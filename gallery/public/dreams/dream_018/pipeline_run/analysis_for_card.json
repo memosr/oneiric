@@ -1,0 +1,40 @@
+{
+  "title": "The Reflecting Shadow",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A dreamer walks a quiet street at night, yellow lamps casting warm reflections on wet cobblestones. In the distance, a clock tower stands faint against the darkness."
+    },
+    {
+      "order": 2,
+      "description": "Passing a bakery with a slightly open door, warm steam drifts outward and transforms into tiny glowing lights. The dreamer follows these luminous particles as they lead away from the urban setting."
+    },
+    {
+      "order": 3,
+      "description": "The road opens into a vast field where wind moves through tall grass. A single tree stands in the distance, its shadow impossibly hanging in the air rather than touching the ground."
+    }
+  ],
+  "symbols": [
+    "street",
+    "clock tower",
+    "bakery",
+    "steam",
+    "glowing lights",
+    "field",
+    "tree",
+    "hanging shadow",
+    "boat",
+    "water",
+    "reflection"
+  ],
+  "mood": "mystical",
+  "color_palette": [
+    "#F4D03F",
+    "#2C3E50",
+    "#E8DCC4",
+    "#1B2631"
+  ],
+  "jungian_reading_tr": "Bu rüya, önceki kayıtlarda beliren tekne, yansıma ve gölge sembollerinin yeni bir bütünleşme aşamasına ulaştığını gösteriyor. Su yüzeyindeki yansımanın artık yalnızca bireyi değil, tüm psikanın unsurlarını—sokağı, fırını, alanı ve havada asılı gölgeyi—bir arada göstermesi, bireyselleşme sürecindeki derin bir entegrasyonu işaret ediyor. Saatin ve buharın ışığa dönüşmesi gibi zamansal ve dönüşümsel motiflerin tekrarı, bilinçdışının bilinçli benlikle diyaloğunu simgeliyor. Bu yansıtıcı yüzey, Jung'un 'Self' arketipinin bütünlüğüne doğru ilerleyen bir bilinç durumunu temsil ediyor.",
+  "id": "dream_018",
+  "date": "2026-04-28"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dream_018",
+  "date": "2026-04-27",
+  "dreamer": "@memo_cc",
+  "title": "The Reflecting Shadow",
+  "transcript_tr": "I’m walking down a quiet street… yellow lamps reflecting on the wet stones, a faint clock tower in the distance.\n\nI pass by the bakery. The door is slightly open, and the warm steam inside drifts out, turning into tiny glowing lights. I follow them.\n\nThe road opens into a field. The wind moves through the grass. In the distance, a single tree… its shadow hanging in the air.\n\nSuddenly, I’m at the shore. A small boat rests by the water. I look into the surface…\n\nIt’s not just me in the reflection.\n\nThe street, the bakery, the field, and that shadow… all staring back with me.",
+  "mood": "mystical",
+  "symbols": [
+    "street",
+    "clock tower",
+    "bakery",
+    "steam",
+    "glowing lights",
+    "field",
+    "tree",
+    "hanging shadow",
+    "boat",
+    "water",
+    "reflection"
+  ],
+  "color_palette": [
+    "#F4D03F",
+    "#2C3E50",
+    "#E8DCC4",
+    "#1B2631"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 4
+  }
+}

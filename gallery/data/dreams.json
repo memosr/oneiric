@@ -166,5 +166,14 @@
     "thumbnail": "card.png",
     "mood": "liminal",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_018",
+    "date": "2026-04-27",
+    "title": "The Reflecting Shadow",
+    "path": "public/dreams/dream_018/",
+    "thumbnail": "card.png",
+    "mood": "mystical",
+    "dreamer": "@memo_cc"
   }
 ]
