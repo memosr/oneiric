@@ -1,0 +1,28 @@
+{
+  "id": "dream_017",
+  "date": "2026-04-27",
+  "dreamer": "@memo_cc",
+  "title": "The Luminous Trail",
+  "transcript_tr": "Yumuşak bir akşam ışığında, sessiz bir ormanın içindesin. Ağaçların arasından ince bir yol uzanıyor. Yürüdükçe, yerdeki kuru yaprakların bazıları hafifçe parlayıp küçük ışıklara dönüşüyor.\n\nBir süre sonra küçük bir dereye ulaşıyorsun. Suyun yüzeyine baktığında, kendi yansımanı değil… yavaşça yürüyen başka birini görüyorsun. Sanki senden birkaç adım önde.\n\nO kişi duruyor. Başını çeviriyor gibi oluyor… ama yüzünü göremeden rüya bitiyor.",
+  "mood": "liminal",
+  "symbols": [
+    "forest",
+    "glowing leaves",
+    "stream",
+    "reflection",
+    "faceless figure"
+  ],
+  "color_palette": [
+    "#D4A574",
+    "#2D3E2F",
+    "#F5E6A3",
+    "#3E4A6B"
+  ],
+  "card_path": "card.png",
+  "generation_metadata": {
+    "llm": "moonshotai/kimi-k2.5",
+    "provider": "nous_portal",
+    "orchestration": "pipeline/main.py (automated)",
+    "scene_count": 3
+  }
+}

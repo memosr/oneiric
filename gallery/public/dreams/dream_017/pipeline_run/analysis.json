@@ -1,0 +1,34 @@
+{
+  "title": "The Luminous Trail",
+  "scenes": [
+    {
+      "order": 1,
+      "description": "A narrow path winds through a silent forest bathed in soft evening amber. Dry leaves beneath the dreamer's feet begin to glow, transforming into scattered points of light that illuminate the way forward."
+    },
+    {
+      "order": 2,
+      "description": "The path leads to a small stream where the water's surface acts as a threshold. Instead of their own reflection, the dreamer sees another figure walking slowly ahead, always a few steps beyond reach."
+    },
+    {
+      "order": 3,
+      "description": "The mysterious figure pauses and begins to turn, suggesting an imminent revelation. The dream dissolves just before the face becomes visible, leaving the encounter suspended in potential."
+    }
+  ],
+  "symbols": [
+    "forest",
+    "glowing leaves",
+    "stream",
+    "reflection",
+    "faceless figure"
+  ],
+  "mood": "liminal",
+  "color_palette": [
+    "#D4A574",
+    "#2D3E2F",
+    "#F5E6A3",
+    "#3E4A6B"
+  ],
+  "jungian_reading_tr": "Bu rüya, bilinçdışının derinliklerinde süren bireyselleşme yolculuğunu gösteriyor. Parlayan yapraklar, bilincin henüz fark etmediği ama var olan potansiyellerin işaretleri; dere yüzeyindeki yansıma ise Gölge arketipinin tezahürü. Önceki rüyalarındaki 'Bekleyen Gölge' teması burada tekrar karşımıza çıkıyor — yine karşılaşma anında rüya sonlanıyor, bu da henüz tamamlanmamış bir entegrasyon sürecine işaret ediyor. Görünmeyen yüz, henüz hazır olmadığın bir öz-bilgi parçasını temsil ediyor; o birkaç adım öndeki mesafe, bilinç ile bilinçdışı arasındaki gerilimin somutlaşması.",
+  "id": "dream_017",
+  "date": "2026-04-27"
+}

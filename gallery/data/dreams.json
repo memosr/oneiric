@@ -157,5 +157,14 @@
     "thumbnail": "card.png",
     "mood": "contemplative",
     "dreamer": "@memo_cc"
+  },
+  {
+    "id": "dream_017",
+    "date": "2026-04-27",
+    "title": "The Luminous Trail",
+    "path": "public/dreams/dream_017/",
+    "thumbnail": "card.png",
+    "mood": "liminal",
+    "dreamer": "@memo_cc"
   }
 ]
